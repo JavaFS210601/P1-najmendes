@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- this is our xml version -->
+
+<!-- our DOCTYPE declaration -->
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+        
+ <!-- this file is what we will use to configure hibernate -->  
+ 
+ <hibernate-configuration>
+ 	
+ 	<session-factory>
+ 	
+ 		<!-- JDBC Credentials - username/password/url-->
+ 		
+ 		<property name="hibernate.connection.username">postgres</property>
+ 		<property name="hibernate.connection.password">password</property>
+ 		<property name="hibernate.connection.url">jdbc:postgresql://javafs210601.cqpdkopyaiuu.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=project1</property>
+ 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+ 		
+ 		<!-- jdbc:postgresql://javafs210601.cqpdkopyaiuu.us-east-2.rds.amazonaws.com:5432/postgres?currentSchema=project1
+ 			 jdbc:postgresql://localhost:5432/postgres?currentSchema=project1	 -->
+ 		
+ 		<!-- Hibernate Properties - sql dialect & default schema-->
+ 		
+ 		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+ 		<property name ="hibernate.default_schema">Project1</property>
+ 		
+ 		
+ 		<!-- Hibernate Console Properties -these will let us see our SQL in the console -->
+ 		
+ 		<property name="hibernate.show_sql">true</property>
+ 		<property name="hibernate.format_sql">true</property>
+ 		
+ 		
+ 		<!-- DDL -hbm2ddl.autp property!! -create, update, validate, create-drop -->
+ 		
+ 		<property name="hibernate.hbm2ddl.auto">update</property>
+ 		
+ 		
+ 		<!-- Mapping of our classes - must be done, or db won't recognize the classes as tables -->
+ 		<mapping class ="com.revature.models.User"/>
+ 		<mapping class ="com.revature.models.UserRole"/> 
+ 		<mapping class ="com.revature.models.ReimbursementStatus"/>
+ 		<mapping class ="com.revature.models.ReimbursementType"/>
+ 		<mapping class ="com.revature.models.Reimbursement"/>
+
+ 		
+ 		<!-- 
+ 		<mapping class ="com.revature.models.Reimbursement"/>
+ 		<mapping class ="com.revature.models.ReimbursementStatus"/>
+ 		<mapping class ="com.revature.models.ReimbursementType"/>
+ 		<mapping class ="com.revature.models.User"/>
+ 		<mapping class ="com.revature.models.UserRole"/> 		
+		 -->
+ 	
+ 	</session-factory>
+ 	
+ </hibernate-configuration>

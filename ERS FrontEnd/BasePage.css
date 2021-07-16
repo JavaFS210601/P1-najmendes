@@ -1,0 +1,22 @@
+
+#picture {
+    background-image: url("images/GWnSHe.jpg");
+    height: 200px;
+    width: 100%;
+
+  }
+
+
+#pageheader {
+    padding: 10px;
+    background: #eca061;
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid #eca972;
+    color: #fff;
+  }
+
+  #loginrow {
+    text-align: center;
+
+  }

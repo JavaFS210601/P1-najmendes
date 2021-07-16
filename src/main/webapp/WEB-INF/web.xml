@@ -9,4 +9,29 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  
+   <!-- Declaring our servlets (servlet)-->   <!-- we must declar and mapp filters just like servlets -->
+  
+  <servlet>
+  	<display-name>MasterServlet</display-name>
+  	<servlet-name>MasterServlet</servlet-name>
+  	<servlet-class>com.revature.web.MasterServlet</servlet-class>
+  </servlet>
+  
+  
+  
+  
+  
+    <!-- Mapping our servlet (what request the servlet responds to)-->
+    
+    <servlet-mapping>
+    	<servlet-name>MasterServlet</servlet-name>
+    	<url-pattern>/*</url-pattern>
+    	<!-- we want ALL (*) requests that come into tomcat to hit this MasterServlet --> 
+    </servlet-mapping>
+    
+    
+    
+  
 </web-app>
