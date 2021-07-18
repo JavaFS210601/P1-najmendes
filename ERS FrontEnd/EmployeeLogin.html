@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" type = "image/png" href = "images\reimbursement_icon.png"/>
     <title>Employee Reimbursement System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
     <link rel = "stylesheet" href = "BasePage.css">
@@ -11,10 +12,29 @@
 </head>
 <body>
     <div class="container" id="fullcontainer">
+
+        <nav class = "navbar navbar-dark bg-dark navbar-expand-sm">
+
+            <ul class = "navbar-nav"> <!--unordered list to store options in my navbar-->
+        
+                <!-- The List items in this navbar will have the class nav-link
+                    which lets us change the router-link the user is on...thus using out routes -->
+                <li class = "nav-item">
+                    <a class= "nav-link" href="BasePage.html">Home</a>
+                </li>
+        
+                <li class = "nav-item">
+                    <a class= "nav-link" href="BasePage.html">Help</a>
+                </li>
+        
+            </ul>
+        
+        </nav>
+
         <div class="col-sm-18" id = "picture">
             <br>
             <br>
-            <h1 id = "pageheader">Employee Reimbursement System</h1>
+            <h1 id = "pageheader">Employees</h1>
         </div>
         
         <br>
@@ -26,9 +46,10 @@
         <button id="loginButton" class="btn btn-dark">Login</button>  
         </div>       
     </div>
-    
+
+    <script src="EmployeeLogin.js"></script>
 </body>
 </html>        
         
-<!-- add buttons to this page for manager to do stuff, but they cannot be done wi/out loggin in first???-->
+<!-- add buttons to this page for employee to do stuff, but they cannot be done wi/out loggin in first???-->
         

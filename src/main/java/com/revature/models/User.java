@@ -53,12 +53,18 @@ public class User {
 	//SCRATCH THAT!!! FOR SOME REASON THIS NOT WORKING...SO I THINK THIS MAY ACTUALLY BE NEEDED
 	//POSSIBLY TO SHOW THE current REIMBURSEMENT REQUEST AS OPPOSED TO THE LIST OF OLD ONES
 	
-	@JsonIgnoreProperties("user")
-	@OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
-	List<Reimbursement> reimbursementsOfUser;
+	@JsonIgnoreProperties("author")
+	@OneToMany(mappedBy = "author", fetch = FetchType.EAGER)
+	List<Reimbursement> reimbursementsOfAuthor;
+	
+	@JsonIgnoreProperties("resolver")
+	@OneToMany(mappedBy = "resolver", fetch = FetchType.EAGER)
+	List<Reimbursement> reimbursementsOfResolver;
+
 
 
 	//boiler plate code below----------------------------------------------------------------
+
 
 	public User() {
 		super();
@@ -66,8 +72,10 @@ public class User {
 	}
 
 
+
 	public User(String username, String user_password, String first_name, String last_name, String user_email,
-			UserRole user_role_fk, List<Reimbursement> reimbursementsOfUser) {
+			UserRole user_role_fk, List<Reimbursement> reimbursementsOfAuthor,
+			List<Reimbursement> reimbursementsOfResolver) {
 		super();
 		this.username = username;
 		this.user_password = user_password;
@@ -75,12 +83,15 @@ public class User {
 		this.last_name = last_name;
 		this.user_email = user_email;
 		this.user_role_fk = user_role_fk;
-		this.reimbursementsOfUser = reimbursementsOfUser;
+		this.reimbursementsOfAuthor = reimbursementsOfAuthor;
+		this.reimbursementsOfResolver = reimbursementsOfResolver;
 	}
 
 
+
 	public User(int user_id, String username, String user_password, String first_name, String last_name,
-			String user_email, UserRole user_role_fk, List<Reimbursement> reimbursementsOfUser) {
+			String user_email, UserRole user_role_fk, List<Reimbursement> reimbursementsOfAuthor,
+			List<Reimbursement> reimbursementsOfResolver) {
 		super();
 		this.user_id = user_id;
 		this.username = username;
@@ -89,42 +100,30 @@ public class User {
 		this.last_name = last_name;
 		this.user_email = user_email;
 		this.user_role_fk = user_role_fk;
-		this.reimbursementsOfUser = reimbursementsOfUser;
+		this.reimbursementsOfAuthor = reimbursementsOfAuthor;
+		this.reimbursementsOfResolver = reimbursementsOfResolver;
 	}
+
 	
-	
-
-	public User(String username, String user_password, String first_name, String last_name, String user_email,
-			UserRole user_role_fk) {
-		super();
-		this.username = username;
-		this.user_password = user_password;
-		this.first_name = first_name;
-		this.last_name = last_name;
-		this.user_email = user_email;
-		this.user_role_fk = user_role_fk;
-	}
-
-
-	@Override
-	public String toString() {	
-
-		return "User [user_id=" + user_id + ", username=" + username + ", user_password=" + user_password
-				+ ", first_name=" + first_name + ", last_name=" + last_name + ", user_email=" + user_email
-				+ ", user_role_fk=" + user_role_fk.getUser_role() + ", reimbursementsOfUser=" + reimbursementsOfUser + "]";
-	}
-
+//	@Override
 //	public String toString() {	
-//	    String results = "";
-//	    for(Reimbursement r : reimbursementsOfUser) {
-//	        results += "," + r.toString();
-//	    }
+//
 //		return "User [user_id=" + user_id + ", username=" + username + ", user_password=" + user_password
 //				+ ", first_name=" + first_name + ", last_name=" + last_name + ", user_email=" + user_email
-//				+ ", user_role_fk=" + user_role_fk + ", reimbursementsOfUser=" + results + "]";
+//				+ ", user_role_fk=" + user_role_fk.getUser_role() + ", reimbursementsOfUser=" + reimbursementsOfUser + "]";
 //	}
-
 	
+	
+	@Override
+	public String toString() {
+		return "User [user_id=" + user_id + ", username=" + username + ", user_password=" + user_password
+				+ ", first_name=" + first_name + ", last_name=" + last_name + ", user_email=" + user_email
+				+ ", user_role_fk=" + user_role_fk.getUser_role() + ", reimbursementsOfAuthor=" + reimbursementsOfAuthor
+				+ ", reimbursementsOfResolver=" + reimbursementsOfResolver + "]";
+	}
+
+
+
 
 	@Override
 	public int hashCode() {
@@ -132,7 +131,8 @@ public class User {
 		int result = 1;
 		result = prime * result + ((first_name == null) ? 0 : first_name.hashCode());
 		result = prime * result + ((last_name == null) ? 0 : last_name.hashCode());
-		result = prime * result + ((reimbursementsOfUser == null) ? 0 : reimbursementsOfUser.hashCode());
+		result = prime * result + ((reimbursementsOfAuthor == null) ? 0 : reimbursementsOfAuthor.hashCode());
+		result = prime * result + ((reimbursementsOfResolver == null) ? 0 : reimbursementsOfResolver.hashCode());
 		result = prime * result + ((user_email == null) ? 0 : user_email.hashCode());
 		result = prime * result + user_id;
 		result = prime * result + ((user_password == null) ? 0 : user_password.hashCode());
@@ -140,6 +140,7 @@ public class User {
 		result = prime * result + ((username == null) ? 0 : username.hashCode());
 		return result;
 	}
+
 
 
 	@Override
@@ -161,10 +162,15 @@ public class User {
 				return false;
 		} else if (!last_name.equals(other.last_name))
 			return false;
-		if (reimbursementsOfUser == null) {
-			if (other.reimbursementsOfUser != null)
+		if (reimbursementsOfAuthor == null) {
+			if (other.reimbursementsOfAuthor != null)
 				return false;
-		} else if (!reimbursementsOfUser.equals(other.reimbursementsOfUser))
+		} else if (!reimbursementsOfAuthor.equals(other.reimbursementsOfAuthor))
+			return false;
+		if (reimbursementsOfResolver == null) {
+			if (other.reimbursementsOfResolver != null)
+				return false;
+		} else if (!reimbursementsOfResolver.equals(other.reimbursementsOfResolver))
 			return false;
 		if (user_email == null) {
 			if (other.user_email != null)
@@ -192,9 +198,11 @@ public class User {
 	}
 
 
+
 	public int getUser_id() {
 		return user_id;
 	}
+
 
 
 	public void setUser_id(int user_id) {
@@ -202,9 +210,11 @@ public class User {
 	}
 
 
+
 	public String getUsername() {
 		return username;
 	}
+
 
 
 	public void setUsername(String username) {
@@ -212,9 +222,11 @@ public class User {
 	}
 
 
+
 	public String getUser_password() {
 		return user_password;
 	}
+
 
 
 	public void setUser_password(String user_password) {
@@ -222,9 +234,11 @@ public class User {
 	}
 
 
+
 	public String getFirst_name() {
 		return first_name;
 	}
+
 
 
 	public void setFirst_name(String first_name) {
@@ -232,9 +246,11 @@ public class User {
 	}
 
 
+
 	public String getLast_name() {
 		return last_name;
 	}
+
 
 
 	public void setLast_name(String last_name) {
@@ -242,9 +258,11 @@ public class User {
 	}
 
 
+
 	public String getUser_email() {
 		return user_email;
 	}
+
 
 
 	public void setUser_email(String user_email) {
@@ -252,9 +270,11 @@ public class User {
 	}
 
 
+
 	public UserRole getUser_role_fk() {
 		return user_role_fk;
 	}
+
 
 
 	public void setUser_role_fk(UserRole user_role_fk) {
@@ -262,16 +282,35 @@ public class User {
 	}
 
 
-	public List<Reimbursement> getReimbursementsOfUser() {
-		return reimbursementsOfUser;
+
+	public List<Reimbursement> getReimbursementsOfAuthor() {
+		return reimbursementsOfAuthor;
 	}
 
 
-	public void setReimbursementsOfUser(List<Reimbursement> reimbursementsOfUser) {
-		this.reimbursementsOfUser = reimbursementsOfUser;
+
+	public void setReimbursementsOfAuthor(List<Reimbursement> reimbursementsOfAuthor) {
+		this.reimbursementsOfAuthor = reimbursementsOfAuthor;
+	}
+
+
+
+	public List<Reimbursement> getReimbursementsOfResolver() {
+		return reimbursementsOfResolver;
+	}
+
+
+
+	public void setReimbursementsOfResolver(List<Reimbursement> reimbursementsOfResolver) {
+		this.reimbursementsOfResolver = reimbursementsOfResolver;
 	}
 	
 	
+
+	
+
+
+
 	
 
 }//class

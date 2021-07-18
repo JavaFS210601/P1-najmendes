@@ -6,10 +6,10 @@ import com.revature.models.Reimbursement;
 
 public interface EmployeeDaoInterface {
 	
-	//submitRequest
-	public void submitReimbursementRequest();
-	
-	//viewTickets
-	public List<Reimbursement> viewAllTickets();
+//	//submitRequest
+//	public void submitReimbursementRequest();
+//	
+//	//viewTickets
+//	public List<Reimbursement> viewAllTickets();
 
 }

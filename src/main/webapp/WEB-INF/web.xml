@@ -13,25 +13,35 @@
   
    <!-- Declaring our servlets (servlet)-->   <!-- we must declar and mapp filters just like servlets -->
   
-  <servlet>
-  	<display-name>MasterServlet</display-name>
-  	<servlet-name>MasterServlet</servlet-name>
-  	<servlet-class>com.revature.web.MasterServlet</servlet-class>
-  </servlet>
+	<servlet>
+  		<display-name>MasterServlet</display-name>
+  		<servlet-name>MasterServlet</servlet-name>
+  		<servlet-class>com.revature.web.MasterServlet</servlet-class>
+	</servlet>
   
+   
+	<filter>
+  		<filter-name>Cors</filter-name>
+  		<filter-class>com.revature.web.filters.CorsFilter</filter-class>
+	</filter>
   
   
   
   
     <!-- Mapping our servlet (what request the servlet responds to)-->
     
-    <servlet-mapping>
-    	<servlet-name>MasterServlet</servlet-name>
-    	<url-pattern>/*</url-pattern>
+	<servlet-mapping>
+		<servlet-name>MasterServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
     	<!-- we want ALL (*) requests that come into tomcat to hit this MasterServlet --> 
-    </servlet-mapping>
+	</servlet-mapping>
     
     
+    
+	<filter-mapping>
+  		<filter-name>Cors</filter-name>
+  		<url-pattern>/*</url-pattern>
+	</filter-mapping>
     
   
 </web-app>

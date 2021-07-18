@@ -7,13 +7,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.revature.controllers.EmployeeController;
+import com.revature.controllers.EmployeeLoginController;
+import com.revature.controllers.ManagerLoginController;
 
 
 
 public class MasterServlet extends HttpServlet {
 	
-	private EmployeeController empControl = new EmployeeController();
+	private EmployeeLoginController employeeLoginController = new EmployeeLoginController();
+	private ManagerLoginController managerLoginController = new ManagerLoginController();
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
@@ -31,18 +33,17 @@ public class MasterServlet extends HttpServlet {
 		//method in the doGet() method...
 		switch(URI) {
 		
-//			case "employeelogin":
-//				
-//				
-//				break;
-//			
-//			case "managerLogin":
-//				
-//				
-//				break;
+			case "employeelogin":
+				employeeLoginController.loginEmployee(request, response);				
+				break;
+			
+			case "managerlogin":{			
+				managerLoginController.loginManager(request, response);	
+				break;
+			}
 				
-			case "tickets":
-				empControl.viewAllTickets(response);			
+			case "employeetickets":
+				employeeLoginController.viewAllTickets(request, response);			
 				break;
 						
 		}//switch	

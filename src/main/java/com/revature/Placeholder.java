@@ -142,14 +142,19 @@ public class Placeholder {
 		
 		// TESTING IF INSERTING INTO USER TABLE WORKS
 		
-		User one = new User("one","one","jane","doe","jdoe@fmail.com",author, null);
-		User two = new User("two","two","john","doe","johndoe@fmail.com",author, null);
-		User three = new User("three","three","henry","doe","hdoe@fmail.com",author, null);
-		User four = new User("four","four","gary","tiff","gtiff@aol.net",author, null);
-		User five = new User("five","five","manuel","duffy","mandu@aol.net",resolver);
-		User six = new User("six","six","uri","oka","urioka@aol.net",resolver);
-		User seven = new User("seven","seven","suzie","micquele","suzmic@aol.net",resolver);
-
+		User one = new User("one","one","jane","doe","jdoe@fmail.com",author, null, null);
+		User two = new User("two","two","john","doe","johndoe@fmail.com",author, null, null);
+		User three = new User("three","three","henry","doe","hdoe@fmail.com",author, null, null);
+		User four = new User("four","four","gary","tiff","gtiff@aol.net",author, null, null);
+		///add more authors
+		
+		
+		
+		
+		User five = new User("five","five","manuel","duffy","mandu@aol.net",resolver, null, null);
+		User six = new User("six","six","uri","oka","urioka@aol.net",resolver, null, null);
+		User seven = new User("seven","seven","suzie","micquele","suzmic@aol.net",resolver, null, null);
+		//add one more resolver
 		
 		insertUser(one);
 		insertUser(two);
@@ -185,13 +190,13 @@ public class Placeholder {
 		// TESTING IF INSERTING INTO REIMBUREMENT TABLE WORKS
 		//Reimbursement
 		
-		Reimbursement reimb1 = new Reimbursement(125,"06/10/2020","06/21/2020","got some food on trip",one, approved, food);
-		Reimbursement reimb2 = new Reimbursement(300,"06/10/2020","06/21/2020","had to stay overnight",one, approved, lodging);
-		Reimbursement reimb3 = new Reimbursement(20,"10/10/2019","11/01/2019","traveled to work",two, denied, travel);
-		Reimbursement reimb4 = new Reimbursement(500,"01/10/2021","01/21/2021","got food with clients",four, approved, food);
-		Reimbursement reimb5 = new Reimbursement(1792,"05/10/2018","07/21/2018","boss said to request reimbursement",three, denied, other);
-		Reimbursement reimb6 = new Reimbursement(1792,"08/10/2018","08/21/2018","several issues were made",three, approved, travel);
-		Reimbursement reimb7 = new Reimbursement(212,"01/10/2021","01/21/2021","got a room for client",four, denied, lodging);
+		Reimbursement reimb1 = new Reimbursement(125,"06/10/2020","06/21/2020","got some food on trip",one,five, approved, food);
+		Reimbursement reimb2 = new Reimbursement(300,"06/10/2020","06/21/2020","had to stay overnight",one,six, approved, lodging);
+		Reimbursement reimb3 = new Reimbursement(20,"10/10/2019","11/01/2019","traveled to work",two,seven, denied, travel);
+		Reimbursement reimb4 = new Reimbursement(500,"01/10/2021","01/21/2021","got food with clients",four,five, approved, food);
+		Reimbursement reimb5 = new Reimbursement(1792,"05/10/2018","07/21/2018","boss said to request reimbursement",three,six, denied, other);
+		Reimbursement reimb6 = new Reimbursement(1792,"08/10/2018","08/21/2018","several issues were made",three,seven, approved, travel);
+		Reimbursement reimb7 = new Reimbursement(212,"01/10/2021","01/21/2021","got a room for client",four,five, denied, lodging);
 		
 		//insertReimb
 		

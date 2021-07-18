@@ -4,14 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--https://stackoverflow.com/questions/41644821/how-can-i-change-the-title-icon (helped me figure out icon image)-->
+    <link rel = "icon" type = "image/png" href = "images\reimbursement_icon.png"/>
+
     <title>Employee Reimbursement System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
     <link rel = "stylesheet" href = "BasePage.css">
-    <!--I just googled "bootstrap cdn" and this ^^^ was in the second link under "CSS"-->
-    <!--Thanks to bootstrap, we can style elements in the class attribute-->
+
 </head>
 <body>
     <div class="container" id="fullcontainer">
+
+        <nav class = "navbar navbar-dark bg-dark navbar-expand-sm">
+
+            <ul class = "navbar-nav"> <!--unordered list to store options in my navbar-->
+        
+                <!-- The List items in this navbar will have the class nav-link...lets us change the page the user is on -->
+                <li class = "nav-item">
+                    <!-- <img src="images/reimbursement_icon.png">  -->
+                </li>
+
+                <li class = "nav-item">
+                    <a class= "nav-link" href="BasePage.html">Home</a>
+                </li>
+
+                <li class = "nav-item">
+                    <a class= "nav-link" href="ManagerLogin.html">Managers</a>
+                </li>
+                <li class = "nav-item">
+                    <a class= "nav-link" href="EmployeeLogin.html">Employees</a>
+                </li>
+        
+                <li class = "nav-item">
+                    <a class= "nav-link" href="BasePage.html">Help</a> 
+                </li>
+        
+            </ul>
+        
+        </nav>
+
+
         <div class="col-sm-18" id = "picture">
             <br>
             <br>
@@ -21,13 +54,7 @@
         <br>
 
 
-        <button id="loginButton" class="btn btn-dark"><a href="EmployeeLogin.html">Employee</a></button>
-        <button id="loginButton" class="btn btn-dark"><a href="ManagerLogin.html">Manager</a></button>
-
-
-        <br>
-
-       
+    </div>   
     <script src="BasePage.js"></script>
 </body>
 </html>

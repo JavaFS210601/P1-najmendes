@@ -1,7 +1,7 @@
 
 #picture {
     background-image: url("images/GWnSHe.jpg");
-    height: 200px;
+    height: 150px;
     width: 100%;
 
   }
@@ -9,10 +9,10 @@
 
 #pageheader {
     padding: 10px;
-    background: #eca061;
+    background: #ca9e7a;
     text-align: center;
     margin: 0 auto;
-    border: 1px solid #eca972;
+    border: 1px solid #ddb493;
     color: #fff;
   }
 

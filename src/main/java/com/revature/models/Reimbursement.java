@@ -42,10 +42,15 @@ public class Reimbursement {
 //	@OneToMany(mappedBy = "user_id", fetch = FetchType.EAGER)
 //	private List<User> authorAndResolver;
 	
-	@JsonIgnoreProperties("reimbursementsOfUser")
+	@JsonIgnoreProperties("reimbursementsOfAuthor")
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "user_id")
-	private User user;
+	@JoinColumn(name = "user_id") //id of author
+	private User author;
+	
+	@JsonIgnoreProperties("reimbursementsOfResolver")
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "user_email")//email of resolver
+	private User resolver;
 
 	@JsonIgnoreProperties("reimbursement")
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -58,6 +63,8 @@ public class Reimbursement {
 	private ReimbursementType reimb_type_fk;
 
 
+
+
 	
 	//boiler plate code below-----------------------------------------------------------------
 
@@ -67,46 +74,69 @@ public class Reimbursement {
 	}
 
 
+
+
+
 	public Reimbursement(int reimb_amount, String date_submitted, String date_resolved, String reimb_description,
-			User user, ReimbursementStatus reimb_status_fk, ReimbursementType reimb_type_fk) {
+			User author, User resolver, ReimbursementStatus reimb_status_fk, ReimbursementType reimb_type_fk) {
 		super();
 		this.reimb_amount = reimb_amount;
 		this.date_submitted = date_submitted;
 		this.date_resolved = date_resolved;
 		this.reimb_description = reimb_description;
-		this.user = user;
+		this.author = author;
+		this.resolver = resolver;
 		this.reimb_status_fk = reimb_status_fk;
 		this.reimb_type_fk = reimb_type_fk;
 	}
 
 
+
+
+
 	public Reimbursement(int reimb_id, int reimb_amount, String date_submitted, String date_resolved,
-			String reimb_description, User user, ReimbursementStatus reimb_status_fk, ReimbursementType reimb_type_fk) {
+			String reimb_description, User author, User resolver, ReimbursementStatus reimb_status_fk,
+			ReimbursementType reimb_type_fk) {
 		super();
 		this.reimb_id = reimb_id;
 		this.reimb_amount = reimb_amount;
 		this.date_submitted = date_submitted;
 		this.date_resolved = date_resolved;
 		this.reimb_description = reimb_description;
-		this.user = user;
+		this.author = author;
+		this.resolver = resolver;
 		this.reimb_status_fk = reimb_status_fk;
 		this.reimb_type_fk = reimb_type_fk;
 	}
 
 
+
+//	@Override
+//	public String toString() {
+//		return "Reimbursement [reimb_id=" + reimb_id + ", reimb_amount=" + reimb_amount + ", date_submitted="
+//				+ date_submitted + ", date_resolved=" + date_resolved + ", reimb_description=" + reimb_description
+//				+ ", user=" + user.getUser_id() + " " + user.getFirst_name() + " " + user.getLast_name() 
+//				+ ", reimb_status_fk=" + reimb_status_fk.getReimb_status() + ", reimb_type_fk=" + reimb_type_fk.getReimb_type() + "]";
+//	}
+
 	@Override
 	public String toString() {
 		return "Reimbursement [reimb_id=" + reimb_id + ", reimb_amount=" + reimb_amount + ", date_submitted="
 				+ date_submitted + ", date_resolved=" + date_resolved + ", reimb_description=" + reimb_description
-				+ ", user=" + user.getUser_id() + " " + user.getFirst_name() + " " + user.getLast_name() 
+				+ ", author= " + author.getUser_id() + ": " + author.getFirst_name() + " " + author.getLast_name() + " " + author.getUser_email() 
+				+ ", resolver= " +  resolver.getFirst_name() + " " + resolver.getLast_name() + " " + resolver.getUser_email()  
 				+ ", reimb_status_fk=" + reimb_status_fk.getReimb_status() + ", reimb_type_fk=" + reimb_type_fk.getReimb_type() + "]";
 	}
+
+
+
 
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((author == null) ? 0 : author.hashCode());
 		result = prime * result + ((date_resolved == null) ? 0 : date_resolved.hashCode());
 		result = prime * result + ((date_submitted == null) ? 0 : date_submitted.hashCode());
 		result = prime * result + reimb_amount;
@@ -114,9 +144,12 @@ public class Reimbursement {
 		result = prime * result + reimb_id;
 		result = prime * result + ((reimb_status_fk == null) ? 0 : reimb_status_fk.hashCode());
 		result = prime * result + ((reimb_type_fk == null) ? 0 : reimb_type_fk.hashCode());
-		result = prime * result + ((user == null) ? 0 : user.hashCode());
+		result = prime * result + ((resolver == null) ? 0 : resolver.hashCode());
 		return result;
 	}
+
+
+
 
 
 	@Override
@@ -128,6 +161,11 @@ public class Reimbursement {
 		if (getClass() != obj.getClass())
 			return false;
 		Reimbursement other = (Reimbursement) obj;
+		if (author == null) {
+			if (other.author != null)
+				return false;
+		} else if (!author.equals(other.author))
+			return false;
 		if (date_resolved == null) {
 			if (other.date_resolved != null)
 				return false;
@@ -157,13 +195,16 @@ public class Reimbursement {
 				return false;
 		} else if (!reimb_type_fk.equals(other.reimb_type_fk))
 			return false;
-		if (user == null) {
-			if (other.user != null)
+		if (resolver == null) {
+			if (other.resolver != null)
 				return false;
-		} else if (!user.equals(other.user))
+		} else if (!resolver.equals(other.resolver))
 			return false;
 		return true;
 	}
+
+
+
 
 
 	public int getReimb_id() {
@@ -171,9 +212,15 @@ public class Reimbursement {
 	}
 
 
+
+
+
 	public void setReimb_id(int reimb_id) {
 		this.reimb_id = reimb_id;
 	}
+
+
+
 
 
 	public int getReimb_amount() {
@@ -181,9 +228,15 @@ public class Reimbursement {
 	}
 
 
+
+
+
 	public void setReimb_amount(int reimb_amount) {
 		this.reimb_amount = reimb_amount;
 	}
+
+
+
 
 
 	public String getDate_submitted() {
@@ -191,9 +244,15 @@ public class Reimbursement {
 	}
 
 
+
+
+
 	public void setDate_submitted(String date_submitted) {
 		this.date_submitted = date_submitted;
 	}
+
+
+
 
 
 	public String getDate_resolved() {
@@ -201,9 +260,15 @@ public class Reimbursement {
 	}
 
 
+
+
+
 	public void setDate_resolved(String date_resolved) {
 		this.date_resolved = date_resolved;
 	}
+
+
+
 
 
 	public String getReimb_description() {
@@ -211,19 +276,47 @@ public class Reimbursement {
 	}
 
 
+
+
+
 	public void setReimb_description(String reimb_description) {
 		this.reimb_description = reimb_description;
 	}
 
 
-	public User getUser() {
-		return user;
+
+
+
+	public User getAuthor() {
+		return author;
 	}
 
 
-	public void setUser(User user) {
-		this.user = user;
+
+
+
+	public void setAuthor(User author) {
+		this.author = author;
 	}
+
+
+
+
+
+	public User getResolver() {
+		return resolver;
+	}
+
+
+
+
+
+	public void setResolver(User resolver) {
+		this.resolver = resolver;
+	}
+
+
+
 
 
 	public ReimbursementStatus getReimb_status_fk() {
@@ -231,9 +324,15 @@ public class Reimbursement {
 	}
 
 
+
+
+
 	public void setReimb_status_fk(ReimbursementStatus reimb_status_fk) {
 		this.reimb_status_fk = reimb_status_fk;
 	}
+
+
+
 
 
 	public ReimbursementType getReimb_type_fk() {
@@ -241,9 +340,18 @@ public class Reimbursement {
 	}
 
 
+
+
+
 	public void setReimb_type_fk(ReimbursementType reimb_type_fk) {
 		this.reimb_type_fk = reimb_type_fk;
 	}
+	
+
+	
+
+
+	
 	
 	
 	
