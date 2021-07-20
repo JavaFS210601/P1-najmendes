@@ -3,7 +3,6 @@ const url = 'http://localhost:8080/P1-najmendes/'//make sure it's the right url!
 //add an event listener to the login button
 document.getElementById("loginButton").addEventListener('click', loginFunc);
 
-
 //this function will send the user-inputted login credentials to the server
 async function loginFunc() {
 
@@ -37,13 +36,20 @@ async function loginFunc() {
     //control flow based on success or failed login
     if(response.status === 200) {
         
-        alert("Login Successful");
-        window.location.assign("EmployeeSystem.html")
-        // document.getElementById("loginrow").innerText="Welcome!";
+        alert("Login Successful"); // instead of : document.getElementById("loginrow").innerText="Welcome!";
         // document.getElementById("loginButton")<a href = "ManagerSystem.html"></a> ... me trying to figure it out before doing some research!!!
-    } else {
+        window.location.assign("EmployeePortal.html");
+    
+        } else {
         alert("Invalid Credentials");
         document.getElementById("loginrow").innerText="Login Failed! Refresh the page!";
-    }
-
+        }
 }
+
+
+
+
+
+
+
+

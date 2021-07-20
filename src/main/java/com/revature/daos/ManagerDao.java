@@ -37,4 +37,25 @@ public class ManagerDao implements ManagerDaoInterface {
 		return correctCredentials;
 	}
 
-}
+
+	
+	
+	
+	
+	public List<Reimbursement> selectAllReimbursements(){
+		
+		Session session = HibernateUtil.getSession();
+		
+		List<Reimbursement> reimbursementList = session.createQuery("FROM Reimbursement").list();
+		
+		HibernateUtil.closeSession();
+		
+		return reimbursementList;
+		
+	}
+	
+}//class end
+
+
+
+	

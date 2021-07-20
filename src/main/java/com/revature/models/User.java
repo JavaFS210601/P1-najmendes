@@ -31,10 +31,10 @@ public class User {
 	@Column(name = "user_password", nullable = false)
 	private String user_password;
 	
-	@Column(name = "first_name", nullable = false)
+	@Column(name = "first_name")
 	private String first_name;
 	
-	@Column(name = "last_name", nullable = false)
+	@Column(name = "last_name")
 	private String last_name;
 	
 	@Column(name = "user_email", unique = true)//unique

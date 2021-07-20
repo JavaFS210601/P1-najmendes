@@ -74,7 +74,15 @@ public class Reimbursement {
 	}
 
 
-
+	public Reimbursement(int reimb_amount, String date_submitted, String reimb_description, User author,
+			ReimbursementType reimb_type_fk) {
+		super();
+		this.reimb_amount = reimb_amount;
+		this.date_submitted = date_submitted;
+		this.reimb_description = reimb_description;
+		this.author = author;
+		this.reimb_type_fk = reimb_type_fk;
+	}
 
 
 	public Reimbursement(int reimb_amount, String date_submitted, String date_resolved, String reimb_description,
@@ -89,8 +97,6 @@ public class Reimbursement {
 		this.reimb_status_fk = reimb_status_fk;
 		this.reimb_type_fk = reimb_type_fk;
 	}
-
-
 
 
 

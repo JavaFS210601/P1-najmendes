@@ -33,18 +33,35 @@ public class MasterServlet extends HttpServlet {
 		//method in the doGet() method...
 		switch(URI) {
 		
+		//employee requests
 			case "employeelogin":
 				employeeLoginController.loginEmployee(request, response);				
 				break;
-			
+				
+			case "employeeviewtickets":
+				employeeLoginController.employeeviewtickets(request, response);			
+				break;
+										
+//			case "employeesubmitticket":
+//				employeeLoginController.submitNewTicket(request, response);			
+//				break;
+				
+				
+				
+		//finance manager requests		
 			case "managerlogin":{			
 				managerLoginController.loginManager(request, response);	
 				break;
 			}
-				
-			case "employeetickets":
-				employeeLoginController.viewAllTickets(request, response);			
+			
+			case "managerviewalltickets":
+				managerLoginController.viewAllTickets(response);			
 				break;
+//							
+//			case "managerresolveticket":
+//				employeeLoginController.viewAllTickets(request, response);			
+//				break;
+
 						
 		}//switch	
 	}//doGet()

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" type = "image/png" href = "images\reimbursement_icon.png"/>
+    <title>Employee Reimbursement System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">   
+    <link rel = "stylesheet" href = "BasePage.css">
+</head>
+<body>
+
+    <nav class = "navbar navbar-dark bg-dark navbar-expand-sm">
+
+        <ul class = "navbar-nav"> <!--unordered list to store options in my navbar-->
+    
+            <!-- The List items in this navbar will have the class nav-link
+                which lets us change the router-link the user is on...thus using out routes -->
+    
+            <li class = "nav-item">
+                <a class= "nav-link" href="EmployeeLogin.html">Logout</a>
+            </li>
+
+
+        </ul>
+    
+    </nav>
+
+    <div class="container" id="fullcontainer">
+        <div class="col-sm-18" id = "picture">
+            <br>
+            <br>
+            <h1 id = "pageheader">Employee Portal</h1>
+        </div>     
+
+        <br>
+        
+        <div id="loginrow" class="row">
+          <h5 class="col-sm-3">Enter Employee Id</h5> 
+          <input id="empId" type="text" placeholder="54" class="col-sm-2 form-control">
+          <button id = "employeeTickets" type="button" class="btn btn-primary"><i class="far fa-eye"> View Tickets</i></button>
+          <button id = "employeeProfile" type="button" class="btn btn-success"><i class="far fa-eye"> View Profile</i></button>
+          <!--<button id = "newTicket" type="button" class="btn btn-danger" onclick=showTicketSubmission()><i class="far fa-edit"> New Ticket</i></button>-->
+
+        </div>
+
+        <br>  
+
+        <div id="table-row" class="row">
+          <!--Then we need rows inside the container to organize it-->
+              <table id="avengerTable" class="table table-hover table-bordered">
+                  <thead>
+                      <tr>
+                          <th>Employee Id</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Email</th>
+                      </tr>
+                  </thead>
+                  <tbody id="displayProfile"></tbody>
+
+                  </tbody>
+              </table>
+        </div>  
+
+        <br>   
+
+        <div id="table-row" class="row">
+          <!--Then we need rows inside the container to organize it-->
+              <table id="avengerTable" class="table table-hover table-bordered">
+                  <thead>
+                      <tr>
+                          <th>Reimbursement Id</th>
+                          <th>Type</th>
+                          <th>Amount</th>
+                          <th>Date Submitted</th>
+                          <th>Date Resolved</th>
+                          <th>Description</th>
+                          <th>Resolver</th>
+                          <th>Status</th>
+
+                      </tr>
+                  </thead>
+                  <tbody id="displayTickets"></tbody>
+
+                  </tbody>
+              </table>
+        </div>  
+
+        <br>
+        <br>
+
+        <h4>Submit New Ticket Below</h4>
+        <br>
+
+        <div id = "hiddenTicketSubmission">
+            <div id="ticketrow" class="row">
+                <h6 class="col-sm-3">Enter Employee ID</h6> 
+                <input id="user_id" type="text" placeholder="54" class="col-sm-6 form-control">
+            </div>   
+            <div id="ticketrow" class="row">
+                <h6 class="col-sm-3">Amount Requested</h6> 
+                <input id="reimb_amount" type="text" placeholder="700.77" class="col-sm-6 form-control">
+            </div>
+            <div id="ticketrow" class="row">
+                <h6 class="col-sm-3">Type of Ticket</h6> 
+                <input id="reimb_type" type="text" placeholder="travel, lodging, food, other" class="col-sm-6 form-control">
+            </div>
+            <div id="ticketrow" class="row">
+                <h6 class="col-sm-3">Descrpition</h6> 
+                <input id="reimb_description" type="text" placeholder="traveled out of state for business with client" class="col-sm-6 form-control">
+            </div>
+            <div id="ticketrow" class="row">
+                <h6 class="col-sm-3">Today's Date</h6> 
+                <input id="date_submitted" type="text" placeholder="01/06/2021" class="col-sm-6 form-control">
+            </div>
+                <!-- <h5 class="col-sm-3">Type of Reimbursement</h5> 
+                <input id="empId" type="text" placeholder="travel, lodging, food, other" class="col-sm-9 form-control">
+
+                <h5 class="col-sm-3">Type of Reimbursement</h5> 
+                <input id="empId" type="text" placeholder="travel, lodging, food, other" class="col-sm-9 form-control"> -->
+           
+            <button id = "employeeProfile" type="button" class="btn btn-danger"><i class="far fa-edit"> Submit Ticket</i></button>
+        </div>
+    </div>
+
+    <script src = "EmployeePortal.js"></script>   
+</body>
+</html>        
+        
+        

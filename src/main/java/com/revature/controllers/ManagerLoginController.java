@@ -2,6 +2,7 @@ package com.revature.controllers;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.models.LoginDTO;
+import com.revature.models.Reimbursement;
 import com.revature.services.ManagerLoginService;
 
 public class ManagerLoginController {
@@ -69,6 +71,65 @@ public class ManagerLoginController {
 	
 	}
 
+	
+
+	
+	
+	
+	
+	public void viewAllTickets(HttpServletResponse response) throws IOException {
+		
+		List<Reimbursement> allReimbursementsList = managerLoginService.viewAllTickets();
+		
+		String json = objectMapper.writeValueAsString(allReimbursementsList);
+		
+		response.getWriter().print(json);
+		
+		response.setStatus(200);
+	}	
+//		if (request.getMethod().equals("GET")) {
+//					
+//					//this process below is to get our JSON string
+//					BufferedReader bufferedReader = request.getReader();
+//					
+//					StringBuilder stringBuilder = new StringBuilder();
+//					
+//					String line = bufferedReader.readLine();
+//					
+//						while (line != null) {
+//							
+//							stringBuilder.append(line);
+//							line = bufferedReader.readLine();
+//						}//while
+//					
+//					String postBody = new String(stringBuilder);
+//					int employeeId = Integer.parseInt(postBody);
+//							
+//							User employee = employeeService.viewAllTickets(employeeId);
+//								
+//							String json = objectMapper.writeValueAsString(employee);
+//								
+//							response.getWriter().print(json);	
+//								
+//							response.setStatus(200);
+//							
+//							
+//						} else {
+//							
+//							HttpSession session = request.getSession(false);
+//							
+//								if (session != null) {
+//									session.invalidate();
+//								}
+//							
+//							response.setStatus(401);
+//							response.getWriter().print("Login Invalid");
+//							
+//						}	
+				
+	
+	
+	
 	
 	
 	

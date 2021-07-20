@@ -38,7 +38,7 @@ async function loginFunc() {
     if(response.status === 200) {
         //this will wipe our login row, and welcome the user
         alert("Login Successful");
-        window.location.assign("ManagerSystem.html")
+        window.location.assign("ManagerPortal.html")
         // document.getElementById("loginrow").innerText="Welcome!";
         // document.getElementById("loginButton")<a href = "ManagerSystem.html"></a>
     } else {

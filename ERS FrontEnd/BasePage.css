@@ -1,3 +1,10 @@
+#masterwrap {
+  padding-right: 0;
+  box-sizing: border-box;
+  padding: 20px 40px 0;
+  position: relative;
+  width: 75%;
+}
 
 #picture {
     background-image: url("images/GWnSHe.jpg");
@@ -20,3 +27,4 @@
     text-align: center;
 
   }
+

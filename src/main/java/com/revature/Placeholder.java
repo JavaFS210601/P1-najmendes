@@ -197,6 +197,8 @@ public class Placeholder {
 		Reimbursement reimb5 = new Reimbursement(1792,"05/10/2018","07/21/2018","boss said to request reimbursement",three,six, denied, other);
 		Reimbursement reimb6 = new Reimbursement(1792,"08/10/2018","08/21/2018","several issues were made",three,seven, approved, travel);
 		Reimbursement reimb7 = new Reimbursement(212,"01/10/2021","01/21/2021","got a room for client",four,five, denied, lodging);
+		Reimbursement reimb8 = new Reimbursement(523,"07/19/2021",null,"got stranded out of state",two,null, null, lodging);
+	
 		
 		//insertReimb
 		
@@ -207,6 +209,7 @@ public class Placeholder {
 		insertReimbursement(reimb5);
 		insertReimbursement(reimb6);
 		insertReimbursement(reimb7);
+		insertReimbursement(reimb8);
 		
 	
 		List<User> users = selectAllUsers();

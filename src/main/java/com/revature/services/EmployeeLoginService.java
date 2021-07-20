@@ -24,14 +24,15 @@ public class EmployeeLoginService {
 
 	
 	
-	
-	
-	
-	
-	
-	
 	public User viewAllTickets(int id) {
-		return employeeDao.viewAllTicketsById(id);
-	}
+		return employeeDao.retrieveUsersProfile(id);
+	}//view all tickets
 
-} //view all tickets
+	
+	//public void submitNewTicket
+	public void submitNewTicket(Reimbursement reimbursement) {
+		employeeDao.insertReimbursement(reimbursement);
+		
+	}
+	
+} //class end

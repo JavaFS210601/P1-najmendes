@@ -11,15 +11,65 @@
     <link rel = "stylesheet" href = "BasePage.css">
 </head>
 <body>
+  <nav class = "navbar navbar-dark bg-dark navbar-expand-sm">
+
+    <ul class = "navbar-nav"> <!--unordered list to store options in my navbar-->
+
+        <!-- The List items in this navbar will have the class nav-link
+            which lets us change the router-link the user is on...thus using out routes -->
+      <li class = "nav-item">
+          <a class= "nav-link" href="ManagerLogin.html">Logout</a>
+      </li>
+
+    </ul>
+
+</nav>
     <div class="container" id="fullcontainer">
         <div class="col-sm-18" id = "picture">
             <br>
             <br>
-            <h1 id = "pageheader">Employee Portal</h1>
+            <h1 id = "pageheader">Manager Portal</h1>
         </div>     
 
-        <button id="loginButton" class="btn btn-dark"><a href = "EmployeeLogin.html">Logout</button>  
+        <br>
+        
+        <div id="loginrow" class="row">
+          <h5 class="col-sm-3">Enter Manager Id</h5> 
+          <input id="managerId" type="text" placeholder="54" class="col-sm-2 form-control">
+          <button id = "managerProfile" type="button" class="btn btn-success"><i class="far fa-eye"> View Profile</i></button>
+        </div>
 
+        <br>  
+
+        <div id="table-row" class="row">
+          <!--Then we need rows inside the container to organize it-->
+              <table id="avengerTable" class="table table-hover table-bordered">
+                  <thead>
+                      <tr>
+                          <th>Manager Id</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Email</th>
+                      </tr>
+                  </thead>
+                  <tbody id="displayProfile"></tbody>
+
+                  </tbody>
+              </table>
+        </div>  
+
+        <br> 
+          <button id = "employeeTickets" type="button" class="btn btn-primary"><i class="far fa-eye"> View All Tickets</i></button>
+          <!--<button id = "newTicket" type="button" class="btn btn-danger" onclick=showTicketSubmission()><i class="far fa-edit"> New Ticket</i></button>-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <table class="table table-bordered">
             <thead>
               <tr>
@@ -73,7 +123,7 @@
     </div>
 
     
-    
+   <script src = "ManagerPortal.js"></script> 
 </body>
 </html>        
         
