@@ -42,9 +42,9 @@ public class MasterServlet extends HttpServlet {
 				employeeLoginController.employeeviewtickets(request, response);			
 				break;
 										
-//			case "employeesubmitticket":
-//				employeeLoginController.submitNewTicket(request, response);			
-//				break;
+			case "employeesubmitticket":
+				employeeLoginController.submitNewTicket(request, response);			
+				break;
 				
 				
 				

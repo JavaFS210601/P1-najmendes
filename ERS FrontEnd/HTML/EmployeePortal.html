@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "icon" type = "image/png" href = "images\reimbursement_icon.png"/>
+    <link rel = "icon" type = "image/png" href = "./../images/reimbursement_icon.png"/>
     <title>Employee Reimbursement System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">   
-    <link rel = "stylesheet" href = "BasePage.css">
+    
+    <!-- boostrap styles for buttons here: https://bootstrapbay.com/blog/day-6-bootstrap-4-buttons-tutorial-and-examples/ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">  <!-- has the eye/edit/delete icons added to buttons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">  
+    <link rel = "stylesheet" href = "./../BasePage.css">
 </head>
 <body>
 
@@ -40,8 +43,8 @@
         <div id="loginrow" class="row">
           <h5 class="col-sm-3">Enter Employee Id</h5> 
           <input id="empId" type="text" placeholder="54" class="col-sm-2 form-control">
-          <button id = "employeeTickets" type="button" class="btn btn-primary"><i class="far fa-eye"> View Tickets</i></button>
-          <button id = "employeeProfile" type="button" class="btn btn-success"><i class="far fa-eye"> View Profile</i></button>
+          <button id = "employeeProfile" type="button" class="btn btn-outline-secondary"> Profile Info</i></button>
+          <button id = "employeeTickets" type="button" class="btn btn-outline-success"> Your Tickets</i></button>
           <!--<button id = "newTicket" type="button" class="btn btn-danger" onclick=showTicketSubmission()><i class="far fa-edit"> New Ticket</i></button>-->
 
         </div>
@@ -50,28 +53,30 @@
 
         <div id="table-row" class="row">
           <!--Then we need rows inside the container to organize it-->
-              <table id="avengerTable" class="table table-hover table-bordered">
-                  <thead>
-                      <tr>
+              <table id="profileTable" class="table table-hover table-bordered">
+                  <thead id="profileTableHead">
+                      <!-- <tr>
                           <th>Employee Id</th>
                           <th>First Name</th>
                           <th>Last Name</th>
                           <th>Email</th>
-                      </tr>
+                      </tr> -->
                   </thead>
                   <tbody id="displayProfile"></tbody>
 
                   </tbody>
               </table>
-        </div>  
+        </div> 
+        <!-- <button id = "hideEmployeeProfile" type="button" class="btn btn-success"><i class="far fa-eye"> Hide Profile</i></button> -->
+        
 
         <br>   
 
         <div id="table-row" class="row">
           <!--Then we need rows inside the container to organize it-->
-              <table id="avengerTable" class="table table-hover table-bordered">
-                  <thead>
-                      <tr>
+              <table id="reimbTable" class="table table-hover table-bordered">
+                  <thead id="ticketsTableHead">
+                      <!-- <tr>
                           <th>Reimbursement Id</th>
                           <th>Type</th>
                           <th>Amount</th>
@@ -80,14 +85,14 @@
                           <th>Description</th>
                           <th>Resolver</th>
                           <th>Status</th>
-
-                      </tr>
+                      </tr> -->
                   </thead>
                   <tbody id="displayTickets"></tbody>
 
                   </tbody>
               </table>
-        </div>  
+        </div> 
+        <!-- <button id = "employeeTickets" type="button" class="btn btn-primary"><i class="far fa-eye"> Hide Tickets</i></button>   -->
 
         <br>
         <br>
@@ -95,18 +100,18 @@
         <h4>Submit New Ticket Below</h4>
         <br>
 
-        <div id = "hiddenTicketSubmission">
+        <div id = "ticketSubmission">
             <div id="ticketrow" class="row">
                 <h6 class="col-sm-3">Enter Employee ID</h6> 
-                <input id="user_id" type="text" placeholder="54" class="col-sm-6 form-control">
+                <input id="user_id" type="text" placeholder="9" class="col-sm-6 form-control">
             </div>   
             <div id="ticketrow" class="row">
                 <h6 class="col-sm-3">Amount Requested</h6> 
-                <input id="reimb_amount" type="text" placeholder="700.77" class="col-sm-6 form-control">
+                <input id="reimb_amount" type="text" placeholder="700" class="col-sm-6 form-control">
             </div>
             <div id="ticketrow" class="row">
                 <h6 class="col-sm-3">Type of Ticket</h6> 
-                <input id="reimb_type" type="text" placeholder="travel, lodging, food, other" class="col-sm-6 form-control">
+                <input id="reimb_type" type="text" placeholder=" 1 = lodging, 2 = travel, 3 = food, 4 = other" class="col-sm-6 form-control">
             </div>
             <div id="ticketrow" class="row">
                 <h6 class="col-sm-3">Descrpition</h6> 
@@ -116,17 +121,32 @@
                 <h6 class="col-sm-3">Today's Date</h6> 
                 <input id="date_submitted" type="text" placeholder="01/06/2021" class="col-sm-6 form-control">
             </div>
-                <!-- <h5 class="col-sm-3">Type of Reimbursement</h5> 
-                <input id="empId" type="text" placeholder="travel, lodging, food, other" class="col-sm-9 form-control">
+            <br>
+            <br>
+            <p>----------------------------------------------------For Manager to Complete----------------------------------------------------</p>
+            <div id="ticketrow" class="row">
+                <h6 class="col-sm-3">Resolver</h6> 
+                <h7 id = "resolver">N/A</h7>
+                <!-- <input id="date_submitted" type="text" placeholder="8" class="col-sm-6 form-control"> -->
+            </div>
+            <div id="ticketrow" class="row">
+                <h6 class="col-sm-3">Date Resolved</h6> 
+                <h7 id ="date_resolved">N/A</h7>
+                <!-- <input id="date_submitted" type="text" placeholder="n/a" class="col-sm-6 form-control"> -->
+            </div>
+            <div id="ticketrow" class="row">
+                <h6 class="col-sm-3">Reimbursement Status</h6> 
+                <h7 id = "reimb_status">N/A</h7>
+                <!-- <input id="date_submitted" type="text" placeholder="unresolved" class="col-sm-6 form-control"> -->
+            </div>
 
-                <h5 class="col-sm-3">Type of Reimbursement</h5> 
-                <input id="empId" type="text" placeholder="travel, lodging, food, other" class="col-sm-9 form-control"> -->
-           
-            <button id = "employeeProfile" type="button" class="btn btn-danger"><i class="far fa-edit"> Submit Ticket</i></button>
+            <br>
+
+            <button id = "submitNewTicket" type="button" class="btn btn-outline-warning"><i class="far fa-edit"> Submit Ticket</i></button>
         </div>
     </div>
 
-    <script src = "EmployeePortal.js"></script>   
+    <script src = "./../JS/EmployeePortal.js"></script>   
 </body>
 </html>        
         

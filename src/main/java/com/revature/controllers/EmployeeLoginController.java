@@ -138,32 +138,10 @@ public class EmployeeLoginController {
 					Reimbursement newReimb = objectMapper.readValue(postBody, Reimbursement.class);
 					
 					employeeService.submitNewTicket(newReimb);
-				
-					//control flow to determine what happens in the event of a successful/unsuccessful login
-				
-						//if the username/password sent to the service are valid...do this...
-//						if(employeeService.submitNewTicket(newReimb)) { 
-//							
-//							HttpSession session = request.getSession();
-//							
-//							session.setAttribute("user", loginDTO);
-//							session.setAttribute("loggedin", true);
-//							
-//							response.setStatus(200); //successfully retrieved manager
-//							response.getWriter().print("Hello, " + loginDTO.username + " is logged in!" );
-//							
-//						} else {
-//							
-//							HttpSession session = request.getSession(false);
-//							
-//								if (session != null) {
-//									session.invalidate();
-//								}
-//							
-//							response.setStatus(401);
-//							response.getWriter().print("Login Invalid");
-//							
-//						}			
+					
+					response.setStatus(200);
+					response.getWriter().print("New Ticket Added" );
+						
 				}	
 				
 	}

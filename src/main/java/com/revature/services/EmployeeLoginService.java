@@ -21,15 +21,14 @@ public class EmployeeLoginService {
 			return false;
 	}
 		
-
-	
 	
 	public User viewAllTickets(int id) {
 		return employeeDao.retrieveUsersProfile(id);
 	}//view all tickets
 
 	
-	//public void submitNewTicket
+	
+
 	public void submitNewTicket(Reimbursement reimbursement) {
 		employeeDao.insertReimbursement(reimbursement);
 		

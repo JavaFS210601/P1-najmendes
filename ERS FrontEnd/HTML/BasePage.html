@@ -4,30 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel = "icon" type = "image/png" href = "images\reimbursement_icon.png"/>
+
+    <!--https://stackoverflow.com/questions/41644821/how-can-i-change-the-title-icon (helped me figure out icon image)-->
+    <link rel = "icon" type = "image/png" href = "./../images/reimbursement_icon.png"/>
+
     <title>Employee Reimbursement System</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
-    <link rel = "stylesheet" href = "BasePage.css">
+    <link rel = "stylesheet" href = "./../BasePage.css">
 
 </head>
 <body>
 
+    <div class="masterwrap" id="fullcontainer"></div>
     <nav class = "navbar navbar-dark bg-dark navbar-expand-sm">
 
         <ul class = "navbar-nav"> <!--unordered list to store options in my navbar-->
+    
+            <!-- The List items in this navbar will have the class nav-link...lets us change the page the user is on -->
+            <li class = "nav-item">
+                <!-- <img src="images/reimbursement_icon.png">  -->
+            </li>
 
-            <!-- The List items in this navbar will have the class nav-link
-                which lets us change the router-link the user is on...thus using out routes -->
             <li class = "nav-item">
                 <a class= "nav-link" href="BasePage.html">Home</a>
             </li>
 
             <li class = "nav-item">
+                <a class= "nav-link" href="ManagerLogin.html">Finance Managers</a>
+            </li>
+            <li class = "nav-item">
+                <a class= "nav-link" href="EmployeeLogin.html">Employees</a>
+            </li>
+    
+            <li class = "nav-item">
                 <a class= "nav-link" href="BasePage.html">About Us</a> 
             </li>
-            
+
             <li class = "nav-item">
-                <a class= "nav-link" href="BasePage.html">Help</a>
+                <a class= "nav-link" href="BasePage.html">Help</a> 
             </li>
     
         </ul>
@@ -35,25 +49,17 @@
     </nav>
 
     <div class="container" id="fullcontainer">
+
         <div class="col-sm-18" id = "picture">
             <br>
             <br>
-            <h1 id = "pageheader">Employees</h1>
+            <h1 id = "pageheader">Employee Reimbursement System</h1>
         </div>
         
         <br>
 
-        <div id="loginrow" class="row">
-        <h5 class="col-sm-3">Enter Login Credentials</h5> 
-        <input id="username" type="text" placeholder="username" class="col-sm-3 form-control">
-        <input id="password" type="password" placeholder="password" class="col-sm-3 form-control">  
-        <button id="loginButton" class="btn btn-dark">Login</button>  
-        </div>       
-    </div>
 
-    <script src="EmployeeLogin.js"></script>
+    </div>   
+    <script src="./../JS/BasePage.js"></script>
 </body>
-</html>        
-        
-<!-- add buttons to this page for employee to do stuff, but they cannot be done wi/out loggin in first???-->
-        
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "icon" type = "image/png" href = "./../images/reimbursement_icon.png"/>
+    <title>Employee Reimbursement System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
+    
+    <!-- boostrap styles for buttons here: https://bootstrapbay.com/blog/day-6-bootstrap-4-buttons-tutorial-and-examples/ -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">  <!-- has the eye/edit/delete icons added to buttons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">   
+    <link rel = "stylesheet" href = "./../BasePage.css">
+</head>
+<body>
+  <nav class = "navbar navbar-dark bg-dark navbar-expand-sm">
+
+    <ul class = "navbar-nav"> <!--unordered list to store options in my navbar-->
+
+        <!-- The List items in this navbar will have the class nav-link
+            which lets us change the router-link the user is on...thus using out routes -->
+      <li class = "nav-item">
+          <a class= "nav-link" href="ManagerLogin.html">Logout</a>
+      </li>
+
+    </ul>
+
+</nav>
+    <div class="container" id="fullcontainer">
+        <div class="col-sm-18" id = "picture">
+            <br>
+            <br>
+            <h1 id = "pageheader">Manager Portal</h1>
+        </div>     
+
+        <br>
+        
+        <div id="loginrow" class="row">
+          <h5 class="col-sm-3">Enter Manager Id</h5> 
+          <input id="managerId" type="text" placeholder="54" class="col-sm-2 form-control">
+          <button id = "managerProfile" type="button" class="btn btn-outline-secondary"> Profile Info</i></button>
+          <button id = "resolvedByYouTickets" type="button" class="btn btn-outline-success"> Tickets You Resolved</i></button>
+        </div>
+        <!-- class="btn btn-secondary" disabled>Secondary</button> -->
+        <br>  
+
+        <div id="table-row" class="row">
+          <!--Then we need rows inside the container to organize it-->
+              <table id="profileTable" class="table table-hover table-bordered">
+                  <thead id="profileTableHead">
+                      <!-- <tr>
+                          <th>Manager Id</th>
+                          <th>First Name</th>
+                          <th>Last Name</th>
+                          <th>Email</th>
+                      </tr> -->
+                  </thead>
+                  <tbody id="displayProfile"></tbody>
+
+                  </tbody>
+              </table>
+        </div>  
+
+        <br> 
+
+          <button id = "viewAllTickets" type="button" class="btn btn-outline-info"><i class="far fa-eye"> All Tickets</i></button>
+          <button id = "viewApprovedTickets" type="button" class="btn btn-outline-info"><i class="far fa-eye"> Approved Tickets</i></button>
+          <button id = "viewDeniedTickets" type="button" class="btn btn-outline-info"><i class="far fa-eye"> Denied Tickets</i></button>
+
+        <br>
+        <br>   
+
+        <div id="table-row" class="row">
+          <!--Then we need rows inside the container to organize it-->
+              <table id="avengerTable" class="table table-hover table-bordered">
+                  <thead>
+                      <tr>
+                          <th>Ticket Id</th>
+                          <th>Type</th>
+                          <th>Amount</th>
+                          <th>Date Submitted</th>
+                          <th>Date Resolved</th>
+                          <th>Description</th>
+                          <th>Employee Contact</th>
+                          <th>Resolver Contact</th>
+                          <th>Status</th>
+
+                      </tr>
+                  </thead>
+                  <tbody id="displayEmployeeTickets"></tbody>
+
+                  </tbody>
+              </table>
+        </div> 
+
+        <br>
+        <br>
+
+        <button id = "viewUnresolved" type="button" class="btn btn-outline-danger"><i class="far fa-eye"> Pending Tickets</i></button>
+
+        <br>
+        <br>
+        <!-- Table of Unresolved/Pending Tickets-->
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th >Reimbursement Id</th>
+                <th >Type</th>
+                <th >Amount</th>
+                <th >Date Submitted</th>
+                <th >Date Resolved</th>
+                <th >Description</th>
+                <th >Employee Contact</th>
+                <th >Status</th>
+              </tr>
+            </thead>
+            <tbody id="displayUnresolvedTickets">
+
+
+                <!-- FIGURE OUT HOW TO GET FUNCTIONAL BUTTON IN THE LAST COLUMN OF EACH ROW <td id = cell9></td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>Resolve</button></td> -->
+            </tbody>
+          </table>
+
+          <br>
+          <br>
+
+          <div id="loginrow" class="row">
+            <h6 class="col-sm-1">Enter Ticket Id</h6> 
+            <input id="ticketId" type="text" placeholder="54" class="col-sm-2 form-control">
+            <button id = "resolveTicket" type="button" class="btn btn-outline-warning"><i class="far fa-edit"> Resolve Ticket</i></button>
+          </div>
+
+
+          <br>
+          <br>
+          <!-- Table of Unresolved/Pending Tickets-->
+          <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th >Reimbursement Id</th>
+                  <th >Type</th>
+                  <th >Amount</th>
+                  <th >Date Submitted</th>
+                  <th >Date Resolved</th>
+                  <th >Description</th>
+                  <th >Employee Contact</th>
+                  <th >Status</th>
+                </tr>
+              </thead>
+              <tbody id="displayUnresolvedTickets">
+      
+      
+                  <!-- FIGURE OUT HOW TO GET FUNCTIONAL BUTTON IN THE LAST COLUMN OF EACH ROW <td id = cell9></td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>Resolve</button></td> -->
+              </tbody>
+            </table>
+
+    </div>
+
+
+</div>
+  
+   <script src = "./../JS/ManagerPortal.js"></script> 
+</body>
+</html>        
+        
+        
