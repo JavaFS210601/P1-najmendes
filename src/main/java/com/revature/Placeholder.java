@@ -209,16 +209,18 @@ public class Placeholder {
 		// TESTING IF INSERTING INTO REIMBUREMENT TABLE WORKS
 		//Reimbursement
 		
-		Reimbursement reimb1 = new Reimbursement(125,"06/10/2020","06/21/2020","got some food on trip",one,seven, approved, food);
-		Reimbursement reimb2 = new Reimbursement(300,"07/20/2021","n/a","had to stay overnight",one,na, pending, lodging);
-		Reimbursement reimb3 = new Reimbursement(20,"10/10/2019","11/01/2019","traveled to work",two,seven, denied, travel);
-		Reimbursement reimb4 = new Reimbursement(500,"01/10/2021","n/a","got food with clients",four,na, pending, food);
-		Reimbursement reimb5 = new Reimbursement(1792,"05/10/2018","07/21/2018","boss said to request reimbursement",three,six, denied, other);
-		Reimbursement reimb6 = new Reimbursement(1792,"08/10/2018","08/21/2018","several issues were made",three,seven, approved, travel);
+		Reimbursement reimb1 = new Reimbursement(125,"05/10/2019","07/21/2019","got some food on trip",one,six, approved, food);
+		Reimbursement reimb2 = new Reimbursement(300,"08/10/2019","08/21/2019","had to stay overnight",five,seven, approved, lodging);
+		Reimbursement reimb3 = new Reimbursement(20,"10/10/2019","11/01/2019","traveled to work",two,six, denied, travel);
+		Reimbursement reimb4 = new Reimbursement(500,"06/10/2020","06/21/2020","got food with clients",four,seven, approved, food);
+		Reimbursement reimb5 = new Reimbursement(1792,"06/28/2020","7/10/2020","boss said to request reimbursement",three,six, denied, other);
+		
+		
+		Reimbursement reimb6 = new Reimbursement(1792,"08/10/2020","n/a","several issues were made",three,na, pending, travel);
 		Reimbursement reimb7 = new Reimbursement(212,"06/10/2021","n/a","got a room for client",four,na, pending, lodging);
 		Reimbursement reimb8 = new Reimbursement(523,"07/19/2021","n/a","got stranded out of state",two,na, pending, lodging);
 		Reimbursement reimb9 = new Reimbursement(30,"02/14/2021","n/a","never got a reimbursement before...",five,na, pending, other);
-		Reimbursement reimb10 = new Reimbursement(517,"06/28/2021","7/10/21","bonding retreat with co-workers",five,six, approved, travel);
+		Reimbursement reimb10 = new Reimbursement(517,"06/28/2021","n/a","bonding retreat with co-workers",one,na, pending, travel);
 	
 		
 		//insertReimb

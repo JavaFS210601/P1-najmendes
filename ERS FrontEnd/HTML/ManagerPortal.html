@@ -121,46 +121,58 @@
 
                 <!-- FIGURE OUT HOW TO GET FUNCTIONAL BUTTON IN THE LAST COLUMN OF EACH ROW <td id = cell9></td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>Resolve</button></td> -->
             </tbody>
-          </table>
+        </table>
+
+        <br>
+        <br>
+        <br>
+
+        <h5>RESOLVE TICKETS BELOW</h5>
+        <br>
+
+
+        <div id="loginrow" class="row">
+          <h6 class="col-sm-1">Enter Today's Date</h6> 
+          <input id="todaysDate" type="text" placeholder="05/12/2018" class="col-sm-2 form-control">
+          <h6 class="col-sm-1">Enter Your Id</h6> 
+          <input id="managerID" type="text" placeholder="54" class="col-sm-2 form-control">
+          <h6 class="col-sm-1">Enter Ticket Id</h6> 
+          <input id="ticketId" type="text" placeholder="54" class="col-sm-2 form-control"> 
+        </div>
+
+
+        <table class="table table-bordered">
+            <thead id = "specificTicket">
+            </thead>  
+
+            <tbody id="displaySpecificTicket">
+            </tbody>
+        </table>
 
           <br>
-          <br>
 
-          <div id="loginrow" class="row">
-            <h6 class="col-sm-1">Enter Ticket Id</h6> 
-            <input id="ticketId" type="text" placeholder="54" class="col-sm-2 form-control">
-            <button id = "resolveTicket" type="button" class="btn btn-outline-warning"><i class="far fa-edit"> Resolve Ticket</i></button>
-          </div>
-          <!-- Table of Unresolved/Pending Tickets-->
-          <table class="table table-bordered">
-              <thead id = "specificTicket">
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+            <label class="custom-control-label" for="customRadio1">Approve Ticket</label>
+        </div>
+        <div class="custom-control custom-radio">
+            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+            <label class="custom-control-label" for="customRadio2">Deny Ticket</label>
+        </div>
 
-              <tbody id="displaySpecificTicket">
-      
-      
-                  <!-- FIGURE OUT HOW TO GET FUNCTIONAL BUTTON IN THE LAST COLUMN OF EACH ROW <td id = cell9></td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>Resolve</button></td> -->
-              </tbody>
-            </table>
+        <br>
 
+          <button id = "resolveTicket" type="button" class="btn btn-outline-warning"><i class="far fa-edit"> Resolve Ticket</i></button>
+          <button id = "submitResolve" type="button" class="btn btn-outline-warning"hidden><i class="far fa-edit" > Submit</i></button>  
 
-            <div class="custom-control custom-radio">
-              <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
-              <label class="custom-control-label" for="customRadio1">Approve Ticket</label>
-            </div>
-            <div class="custom-control custom-radio">
-              <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-              <label class="custom-control-label" for="customRadio2">Deny Ticket</label>
+        <br>
+        <br>
 
-            <button id = "submitResolve" type="button" class="btn btn-outline-warning"hidden><i class="far fa-edit" > Submit</i></button>
-            <br>
-            <br>
-
-            <div class="col-sm-18">
+        <div class="col-sm-18">
               <br>
               <br>
-              <h1 id = "pageheader"></h1>
-          </div> 
-          </div>
+          <h1 id = "pageheader"></h1>
+        </div> 
 
 
 </div>
@@ -169,4 +181,42 @@
 </body>
 </html>        
         
-        
+
+
+
+
+
+  <!-- <div id="loginrow" class="row">
+    <h6 class="col-sm-1">Enter Today's Date</h6> 
+    <input id="todaysDate" type="text" placeholder="54" class="col-sm-2 form-control">
+    <h6 class="col-sm-1">Enter Your Id</h6> 
+    <input id="managerID" type="text" placeholder="54" class="col-sm-2 form-control">
+    <h6 class="col-sm-1">Enter Ticket Id</h6> 
+    <input id="ticketId" type="text" placeholder="54" class="col-sm-2 form-control">
+    
+  </div>
+  
+
+  <table class="table table-bordered">
+      <thead id = "specificTicket">
+
+      <tbody id="displaySpecificTicket">
+
+
+          
+      </tbody>
+    </table>
+
+
+    <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+      <label class="custom-control-label" for="customRadio1">Approve Ticket</label>
+    </div>
+    <div class="custom-control custom-radio">
+      <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+      <label class="custom-control-label" for="customRadio2">Deny Ticket</label>
+
+      <button id = "resolveTicket" type="button" class="btn btn-outline-warning"><i class="far fa-edit"> Resolve Ticket</i></button>
+
+    <br>
+    <br> -->

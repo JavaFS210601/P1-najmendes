@@ -315,23 +315,25 @@ async function loadSpecificTicket(){
                 let ticketId = data.reimb_id;
                 let amount = data.reimb_amount;
                 let submitted  = data.date_submitted;
-                let resolved = data.date_resolved;
+                let resolvedDate =  document.getElementById("todaysDate").value;
                 let description = data.reimb_description;
                 let userId =  data.author.user_id;
                 let type  = data.reimb_type_fk.reimb_type_id;
+                let resolver  = document.getElementById("managerID").value;
+                
 
             
                  reimbursement = {
                     reimb_id: ticketId,
                     reimb_amount: amount,
                     date_submitted: submitted,
-                    date_resolved: resolved,
+                    date_resolved: resolvedDate,
                     reimb_description: description,
                     author: {
                         user_id: userId
                     },
                     resolver: {
-                    user_id: 7
+                    user_id: resolver
                     },
                     reimb_status_fk: {
                         reimb_status_id: 1
@@ -351,23 +353,24 @@ async function loadSpecificTicket(){
                 let ticketId = data.reimb_id;
                 let amount = data.reimb_amount;
                 let submitted  = data.date_submitted;
-                let resolved = "07/21/2021";
+                let resolvedDate = document.getElementById("todaysDate").value;
                 let description = data.reimb_description;
                 let userId =  data.author.user_id;
                 let type  = data.reimb_type_fk.reimb_type_id; //make sure this is the id and not the "string" type
-        
+                let resolver  = document.getElementById("managerID").value;
+
             
                  reimbursement = {
                     reimb_id: ticketId,
                     reimb_amount: amount,
                     date_submitted: submitted,
-                    date_resolved: resolved,
+                    date_resolved: resolvedDate,
                     reimb_description: description,
                     author: {
                         user_id: userId
                     },
                     resolver: {
-                       user_id: 6 //can't get this part so i have to set it here
+                       user_id: resolver
                     },
                     reimb_status_fk: {
                         reimb_status_id: 2

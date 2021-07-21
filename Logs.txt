@@ -96,3 +96,133 @@
 2021-07-21 14:16:36 INFO  ManagerLoginController:92 - Manager request to view tickets
 2021-07-21 14:29:29 WARN  MasterServlet:43 - Attempt to log in as employee
 2021-07-21 14:29:40 WARN  EmployeeLoginController:77 - Invalid credentials entered for employee login
+2021-07-21 14:30:29 WARN  MasterServlet:43 - Attempt to log in as employee
+2021-07-21 14:30:36 INFO  EmployeeLoginController:65 - one: Successful employee login
+2021-07-21 14:32:26 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 14:32:28 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 14:32:56 WARN  MasterServlet:52 - Employee attempt to submit new ticket
+2021-07-21 14:32:56 INFO  EmployeeLoginController:151 - Employee successfully submitted a new ticket
+2021-07-21 14:33:03 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 14:33:32 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 14:33:33 INFO  ManagerLoginController:61 - six :Successful manager login
+2021-07-21 14:34:12 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 14:34:19 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:34:25 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:34:29 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:34:47 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:35:38 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:35:48 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:35:50 INFO  ManagerLoginController:165 - Ticket resolved successfully
+2021-07-21 14:36:09 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:36:12 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:39:40 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:39:49 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:39:51 INFO  ManagerLoginController:165 - Ticket resolved successfully
+2021-07-21 14:41:38 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:43:56 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 14:44:34 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:44:38 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:44:53 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:44:54 INFO  ManagerLoginController:165 - Ticket resolved successfully
+2021-07-21 14:45:00 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:45:03 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:46:54 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 14:46:55 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 14:47:22 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:47:24 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:51:20 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 14:51:21 INFO  ManagerLoginController:61 - six :Successful manager login
+2021-07-21 15:42:49 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 15:42:50 INFO  ManagerLoginController:61 - six :Successful manager login
+2021-07-21 15:42:57 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 15:43:05 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 15:55:11 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 15:55:50 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 15:55:51 INFO  ManagerLoginController:165 - Ticket resolved successfully
+2021-07-21 15:55:56 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 15:56:10 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 16:01:23 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:01:32 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:01:40 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 16:02:55 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:03:14 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 16:06:51 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 16:06:53 INFO  ManagerLoginController:165 - Ticket resolved successfully
+2021-07-21 16:07:05 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:07:07 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:14:18 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 16:14:29 INFO  ManagerLoginController:61 - six :Successful manager login
+2021-07-21 16:14:35 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:16:07 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 16:16:08 INFO  ManagerLoginController:61 - six :Successful manager login
+2021-07-21 16:16:13 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:16:17 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:30:50 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 16:31:01 INFO  ManagerLoginController:61 - six :Successful manager login
+2021-07-21 16:31:10 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 16:31:12 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:31:19 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:31:40 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 16:31:41 INFO  ManagerLoginController:165 - Ticket resolved successfully
+2021-07-21 16:31:45 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:31:50 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:32:00 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 16:32:20 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 16:32:21 INFO  ManagerLoginController:61 - seven :Successful manager login
+2021-07-21 16:32:25 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 16:32:29 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:32:32 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:32:56 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 16:32:57 INFO  ManagerLoginController:165 - Ticket resolved successfully
+2021-07-21 16:33:01 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:33:04 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:35:04 WARN  MasterServlet:43 - Attempt to log in as employee
+2021-07-21 16:35:05 INFO  EmployeeLoginController:65 - three: Successful employee login
+2021-07-21 16:35:10 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 16:35:12 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 16:35:31 WARN  MasterServlet:52 - Employee attempt to submit new ticket
+2021-07-21 16:35:32 INFO  EmployeeLoginController:151 - Employee successfully submitted a new ticket
+2021-07-21 16:35:37 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 16:37:16 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 16:37:26 INFO  ManagerLoginController:61 - six :Successful manager login
+2021-07-21 16:37:29 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 16:37:32 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 17:00:20 WARN  MasterServlet:43 - Attempt to log in as employee
+2021-07-21 17:00:20 INFO  EmployeeLoginController:65 - three: Successful employee login
+2021-07-21 17:00:35 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 17:00:38 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 17:01:07 WARN  MasterServlet:52 - Employee attempt to submit new ticket
+2021-07-21 17:01:07 INFO  EmployeeLoginController:151 - Employee successfully submitted a new ticket
+2021-07-21 17:01:14 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 17:01:36 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 17:01:37 INFO  ManagerLoginController:61 - six :Successful manager login
+2021-07-21 17:01:46 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 17:01:51 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 17:02:01 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 17:02:29 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 17:02:31 INFO  ManagerLoginController:165 - Ticket resolved successfully
+2021-07-21 17:02:39 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 17:02:43 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 17:04:51 WARN  MasterServlet:43 - Attempt to log in as employee
+2021-07-21 17:04:51 INFO  EmployeeLoginController:65 - six: Successful employee login
+2021-07-21 17:06:28 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 17:06:28 INFO  ManagerLoginController:61 - six :Successful manager login
+2021-07-21 17:06:31 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 17:06:39 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 17:14:00 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 17:14:01 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 17:14:07 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 17:14:10 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 17:14:12 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 17:14:48 WARN  MasterServlet:52 - Employee attempt to submit new ticket
+2021-07-21 17:14:48 INFO  EmployeeLoginController:151 - Employee successfully submitted a new ticket
+2021-07-21 17:14:54 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 17:15:24 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 17:15:25 INFO  ManagerLoginController:61 - seven :Successful manager login
+2021-07-21 17:15:33 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 17:15:45 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 17:16:00 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 17:16:35 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 17:16:36 INFO  ManagerLoginController:165 - Ticket resolved successfully
+2021-07-21 17:16:41 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 17:16:47 INFO  ManagerLoginController:92 - Manager request to view tickets
