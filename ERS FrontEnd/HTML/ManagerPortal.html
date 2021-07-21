@@ -29,7 +29,7 @@
 
 </nav>
     <div class="container" id="fullcontainer">
-        <div class="col-sm-18" id = "picture">
+        <div class="col-sm-18">
             <br>
             <br>
             <h1 id = "pageheader">Manager Portal</h1>
@@ -41,7 +41,7 @@
           <h5 class="col-sm-3">Enter Manager Id</h5> 
           <input id="managerId" type="text" placeholder="54" class="col-sm-2 form-control">
           <button id = "managerProfile" type="button" class="btn btn-outline-secondary"> Profile Info</i></button>
-          <button id = "resolvedByYouTickets" type="button" class="btn btn-outline-success"> Tickets You Resolved</i></button>
+          <!-- <button id = "resolvedByYouTickets" type="button" class="btn btn-outline-success"> Tickets You Resolved</i></button> -->
         </div>
         <!-- class="btn btn-secondary" disabled>Secondary</button> -->
         <br>  
@@ -66,8 +66,8 @@
         <br> 
 
           <button id = "viewAllTickets" type="button" class="btn btn-outline-info"><i class="far fa-eye"> All Tickets</i></button>
-          <button id = "viewApprovedTickets" type="button" class="btn btn-outline-info"><i class="far fa-eye"> Approved Tickets</i></button>
-          <button id = "viewDeniedTickets" type="button" class="btn btn-outline-info"><i class="far fa-eye"> Denied Tickets</i></button>
+          <!-- <button id = "viewApprovedTickets" type="button" class="btn btn-outline-info"><i class="far fa-eye"> Approved Tickets</i></button>
+          <button id = "viewDeniedTickets" type="button" class="btn btn-outline-info"><i class="far fa-eye"> Denied Tickets</i></button> -->
 
         <br>
         <br>   
@@ -131,10 +131,6 @@
             <input id="ticketId" type="text" placeholder="54" class="col-sm-2 form-control">
             <button id = "resolveTicket" type="button" class="btn btn-outline-warning"><i class="far fa-edit"> Resolve Ticket</i></button>
           </div>
-
-
-          <br>
-          <br>
           <!-- Table of Unresolved/Pending Tickets-->
           <table class="table table-bordered">
               <thead id = "specificTicket">
@@ -154,10 +150,17 @@
             <div class="custom-control custom-radio">
               <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
               <label class="custom-control-label" for="customRadio2">Deny Ticket</label>
-            </div>
-            <br>
+
             <button id = "submitResolve" type="button" class="btn btn-outline-warning"hidden><i class="far fa-edit" > Submit</i></button>
-    </div>
+            <br>
+            <br>
+
+            <div class="col-sm-18">
+              <br>
+              <br>
+              <h1 id = "pageheader"></h1>
+          </div> 
+          </div>
 
 
 </div>

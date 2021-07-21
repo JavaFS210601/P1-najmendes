@@ -131,124 +131,7 @@ async function populateAllEmplyeeTickets(){
 }
 
 
-document.getElementById("viewApprovedTickets").addEventListener('click', viewApprovedTickets);
-async function viewApprovedTickets(){
 
-    let response = await fetch(url + 'managerviewalltickets', {credentials: 'include'});
-
-    if(response.status === 200) {
-        console.log(response);
-
-        let data = await response.json(); //get the JSON data from the response, turn it into JS object
-
-        for(let ticket of data) { //for every ability in the abilitiesArray...
-            console.log(ticket);
-
-            if(ticket.reimb_status_fk.reimb_status === "approved") {
-
-                let row = document.createElement("tr"); 
-
-                let cell1 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell1.innerHTML = ticket.reimb_id; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell1);
-    
-                let cell2 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell2.innerHTML = ticket.reimb_type_fk.reimb_type; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell2)
-    
-                let cell3 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell3.innerHTML = ticket.reimb_amount; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell3);
-    
-                let cell4 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell4.innerHTML = ticket.date_submitted; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell4)
-    
-                let cell5 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell5.innerHTML = ticket.date_resolved; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell5);
-    
-                let cell6 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell6.innerHTML = ticket.reimb_description; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell6);
-    
-                let cell7 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell7.innerHTML = ticket.author.user_email; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell7)
-    
-                let cell8 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell8.innerHTML = ticket.resolver.user_email; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell8)
-    
-                let cell9 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell9.innerHTML = ticket.reimb_status_fk.reimb_status; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell9);
-
-            document.getElementById("displayEmployeeTickets").appendChild(row);
-            } 
-        }   
-    }
-} 
-
-
-document.getElementById("viewDeniedTickets").addEventListener('click', viewDeniedTickets);
-async function viewDeniedTickets(){
-
-    let response = await fetch(url + 'managerviewalltickets', {credentials: 'include'});
-
-    if(response.status === 200) {
-        console.log(response);
-
-        let data = await response.json(); //get the JSON data from the response, turn it into JS object
-
-        for(let ticket of data) { //for every ability in the abilitiesArray...
-            console.log(ticket);
-
-            if(ticket.reimb_status_fk.reimb_status === "denied") {
-
-                let row = document.createElement("tr"); 
-
-                let cell1 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell1.innerHTML = ticket.reimb_id; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell1);
-    
-                let cell2 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell2.innerHTML = ticket.reimb_type_fk.reimb_type; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell2)
-    
-                let cell3 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell3.innerHTML = ticket.reimb_amount; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell3);
-    
-                let cell4 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell4.innerHTML = ticket.date_submitted; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell4)
-    
-                let cell5 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell5.innerHTML = ticket.date_resolved; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell5);
-    
-                let cell6 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell6.innerHTML = ticket.reimb_description; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell6);
-    
-                let cell7 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell7.innerHTML = ticket.author.user_email; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell7)
-    
-                let cell8 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell8.innerHTML = ticket.resolver.user_email; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell8)
-    
-                let cell9 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell9.innerHTML = ticket.reimb_status_fk.reimb_status; //populating the h3 with the name of the Pokemon
-                row.appendChild(cell9);
-
-            document.getElementById("displayEmployeeTickets").appendChild(row);
-            } 
-        }   
-    }
-} 
 
 
 document.getElementById("viewPending").addEventListener('click', viewPendingTickets);
@@ -296,7 +179,7 @@ async function viewPendingTickets(){
                 row.appendChild(cell7)
 
                 let cell8 = document.createElement("td"); //create a header element (DOM manipulation);
-                cell8.innerHTML = ticket.author.user_id; //populating the h3 with the name of the Pokemon
+                cell8.innerHTML = ticket.reimb_status_fk.reimb_status; //populating the h3 with the name of the Pokemon
                 row.appendChild(cell8)
                 
 
@@ -348,79 +231,79 @@ async function loadSpecificTicket(){
         data = await response.json(); //get the JSON data from the response, turn it into JS object
         console.log(data);
 
-        let headrow = document.createElement("tr"); 
+        // let headrow = document.createElement("tr"); 
 
-        let head1 = document.createElement("th"); //create a header element (DOM manipulation);
-        head1.innerHTML = "Ticket Id"; //populating the h3 with the name of the Pokemon
-        headrow.appendChild(head1);
+        // let head1 = document.createElement("th"); //create a header element (DOM manipulation);
+        // head1.innerHTML = "Ticket Id"; //populating the h3 with the name of the Pokemon
+        // headrow.appendChild(head1);
 
-        let head2 = document.createElement("th"); //create a header element (DOM manipulation);
-        head2.innerHTML = "Type"; //populating the h3 with the name of the Pokemon
-        headrow.appendChild(head2);
+        // let head2 = document.createElement("th"); //create a header element (DOM manipulation);
+        // head2.innerHTML = "Type"; //populating the h3 with the name of the Pokemon
+        // headrow.appendChild(head2);
 
-        let head3 = document.createElement("th"); //create a header element (DOM manipulation);
-        head3.innerHTML = "Amount"; //populating the h3 with the name of the Pokemon
-        headrow.appendChild(head3);
+        // let head3 = document.createElement("th"); //create a header element (DOM manipulation);
+        // head3.innerHTML = "Amount"; //populating the h3 with the name of the Pokemon
+        // headrow.appendChild(head3);
 
-        let head4 = document.createElement("th"); //create a header element (DOM manipulation);
-        head4.innerHTML = "Date Submitted"; //populating the h3 with the name of the Pokemon
-        headrow.appendChild(head4);
+        // let head4 = document.createElement("th"); //create a header element (DOM manipulation);
+        // head4.innerHTML = "Date Submitted"; //populating the h3 with the name of the Pokemon
+        // headrow.appendChild(head4);
 
-        let head5 = document.createElement("th"); //create a header element (DOM manipulation);
-        head5.innerHTML = "Date Resolved"; //populating the h3 with the name of the Pokemon
-        headrow.appendChild(head5);
+        // let head5 = document.createElement("th"); //create a header element (DOM manipulation);
+        // head5.innerHTML = "Date Resolved"; //populating the h3 with the name of the Pokemon
+        // headrow.appendChild(head5);
 
-        let head6 = document.createElement("th"); //create a header element (DOM manipulation);
-        head6.innerHTML = "Description"; //populating the h3 with the name of the Pokemon
-        headrow.appendChild(head6);
+        // let head6 = document.createElement("th"); //create a header element (DOM manipulation);
+        // head6.innerHTML = "Description"; //populating the h3 with the name of the Pokemon
+        // headrow.appendChild(head6);
 
-        let head7 = document.createElement("th"); //create a header element (DOM manipulation);
-        head7.innerHTML = "Employee Contact"; //populating the h3 with the name of the Pokemon
-        headrow.appendChild(head7);
+        // let head7 = document.createElement("th"); //create a header element (DOM manipulation);
+        // head7.innerHTML = "Employee Contact"; //populating the h3 with the name of the Pokemon
+        // headrow.appendChild(head7);
 
-        let head8 = document.createElement("th"); //create a header element (DOM manipulation);
-        head8.innerHTML = "Status"; //populating the h3 with the name of the Pokemon
-        headrow.appendChild(head8);
+        // let head8 = document.createElement("th"); //create a header element (DOM manipulation);
+        // head8.innerHTML = "Status"; //populating the h3 with the name of the Pokemon
+        // headrow.appendChild(head8);
 
-        document.getElementById("specificTicket").appendChild(headrow);
+        // document.getElementById("specificTicket").appendChild(headrow);
 
 
 
-        let row = document.createElement("tr"); 
+        // let row = document.createElement("tr"); 
 
-        let cell1 = document.createElement("td"); //create a header element (DOM manipulation);
-        cell1.innerHTML = data.reimb_id; //populating the h3 with the name of the Pokemon
-        row.appendChild(cell1);
+        // let cell1 = document.createElement("td"); //create a header element (DOM manipulation);
+        // cell1.innerHTML = data.reimb_id; //populating the h3 with the name of the Pokemon
+        // row.appendChild(cell1);
 
-        let cell2 = document.createElement("td"); //create a header element (DOM manipulation);
-        cell2.innerHTML = data.reimb_type_fk.reimb_type; //populating the h3 with the name of the Pokemon
-        row.appendChild(cell2)
+        // let cell2 = document.createElement("td"); //create a header element (DOM manipulation);
+        // cell2.innerHTML = data.reimb_type_fk.reimb_type; //populating the h3 with the name of the Pokemon
+        // row.appendChild(cell2)
 
-        let cell3 = document.createElement("td"); //create a header element (DOM manipulation);
-        cell3.innerHTML = data.reimb_amount; //populating the h3 with the name of the Pokemon
-        row.appendChild(cell3);
+        // let cell3 = document.createElement("td"); //create a header element (DOM manipulation);
+        // cell3.innerHTML = data.reimb_amount; //populating the h3 with the name of the Pokemon
+        // row.appendChild(cell3);
 
-        let cell4 = document.createElement("td"); //create a header element (DOM manipulation);
-        cell4.innerHTML = data.date_submitted; //populating the h3 with the name of the Pokemon
-        row.appendChild(cell4)
+        // let cell4 = document.createElement("td"); //create a header element (DOM manipulation);
+        // cell4.innerHTML = data.date_submitted; //populating the h3 with the name of the Pokemon
+        // row.appendChild(cell4)
 
-        let cell5 = document.createElement("td"); //create a header element (DOM manipulation);
-        cell5.innerHTML = data.date_resolved; //populating the h3 with the name of the Pokemon
-        row.appendChild(cell5);
+        // let cell5 = document.createElement("td"); //create a header element (DOM manipulation);
+        // cell5.innerHTML = data.date_resolved; //populating the h3 with the name of the Pokemon
+        // row.appendChild(cell5);
 
-        let cell6 = document.createElement("td"); //create a header element (DOM manipulation);
-        cell6.innerHTML = data.reimb_description; //populating the h3 with the name of the Pokemon
-        row.appendChild(cell6);
+        // let cell6 = document.createElement("td"); //create a header element (DOM manipulation);
+        // cell6.innerHTML = data.reimb_description; //populating the h3 with the name of the Pokemon
+        // row.appendChild(cell6);
 
-        let cell7 = document.createElement("td"); //create a header element (DOM manipulation);
-        cell7.innerHTML = data.author.user_email; //populating the h3 with the name of the Pokemon
-        row.appendChild(cell7)
+        // let cell7 = document.createElement("td"); //create a header element (DOM manipulation);
+        // cell7.innerHTML = data.author.user_email; //populating the h3 with the name of the Pokemon
+        // row.appendChild(cell7)
 
-        let cell8 = document.createElement("td"); //create a header element (DOM manipulation);
-        cell8.innerHTML = data.reimb_status_fk.reimb_status; //populating the h3 with the name of the Pokemon
-        row.appendChild(cell8);
+        // let cell8 = document.createElement("td"); //create a header element (DOM manipulation);
+        // cell8.innerHTML = data.reimb_status_fk.reimb_status; //populating the h3 with the name of the Pokemon
+        // row.appendChild(cell8);
 
-        document.getElementById("displaySpecificTicket").appendChild(row);
+        // document.getElementById("displaySpecificTicket").appendChild(row);
 
      
 
@@ -458,6 +341,7 @@ async function loadSpecificTicket(){
                     }
                 }
                 document.getElementById("submitResolve").addEventListener("click", submitResolve(reimbursement));
+
             }    
 
 
@@ -493,6 +377,7 @@ async function loadSpecificTicket(){
                     }
                 }
                 document.getElementById("submitResolve").addEventListener("click", submitResolve(reimbursement));
+            
             }        
 
         }
@@ -517,6 +402,134 @@ async function loadSpecificTicket(){
         if(response.status === 200) {
             console.log(response);
             alert("Ticket Resolved!");
-            // window.location.assign("ManagerPortal.html");
+            window.location.assign("ManagerPortal.html");
         }
     }
+
+
+
+
+
+
+
+
+
+
+    // document.getElementById("viewApprovedTickets").addEventListener('click', viewApprovedTickets);
+// async function viewApprovedTickets(){
+
+//     let response = await fetch(url + 'managerviewalltickets', {credentials: 'include'});
+
+//     if(response.status === 200) {
+//         console.log(response);
+
+//         let data = await response.json(); //get the JSON data from the response, turn it into JS object
+
+//         for(let ticket of data) { //for every ability in the abilitiesArray...
+//             console.log(ticket);
+
+//             if(ticket.reimb_status_fk.reimb_status === "approved") {
+
+//                 let row = document.createElement("tr"); 
+
+//                 let cell1 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell1.innerHTML = ticket.reimb_id; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell1);
+    
+//                 let cell2 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell2.innerHTML = ticket.reimb_type_fk.reimb_type; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell2)
+    
+//                 let cell3 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell3.innerHTML = ticket.reimb_amount; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell3);
+    
+//                 let cell4 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell4.innerHTML = ticket.date_submitted; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell4)
+    
+//                 let cell5 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell5.innerHTML = ticket.date_resolved; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell5);
+    
+//                 let cell6 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell6.innerHTML = ticket.reimb_description; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell6);
+    
+//                 let cell7 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell7.innerHTML = ticket.author.user_email; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell7)
+    
+//                 let cell8 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell8.innerHTML = ticket.resolver.user_email; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell8)
+    
+//                 let cell9 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell9.innerHTML = ticket.reimb_status_fk.reimb_status; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell9);
+
+//             document.getElementById("displayEmployeeTickets").appendChild(row);
+//             } 
+//         }   
+//     }
+// } 
+
+
+// document.getElementById("viewDeniedTickets").addEventListener('click', viewDeniedTickets);
+// async function viewDeniedTickets(){
+
+//     let response = await fetch(url + 'managerviewalltickets', {credentials: 'include'});
+
+//     if(response.status === 200) {
+//         console.log(response);
+
+//         let data = await response.json(); //get the JSON data from the response, turn it into JS object
+
+//         for(let ticket of data) { //for every ability in the abilitiesArray...
+//             console.log(ticket);
+
+//             if(ticket.reimb_status_fk.reimb_status === "denied") {
+
+//                 let row = document.createElement("tr"); 
+
+//                 let cell1 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell1.innerHTML = ticket.reimb_id; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell1);
+    
+//                 let cell2 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell2.innerHTML = ticket.reimb_type_fk.reimb_type; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell2)
+    
+//                 let cell3 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell3.innerHTML = ticket.reimb_amount; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell3);
+    
+//                 let cell4 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell4.innerHTML = ticket.date_submitted; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell4)
+    
+//                 let cell5 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell5.innerHTML = ticket.date_resolved; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell5);
+    
+//                 let cell6 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell6.innerHTML = ticket.reimb_description; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell6);
+    
+//                 let cell7 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell7.innerHTML = ticket.author.user_email; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell7)
+    
+//                 let cell8 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell8.innerHTML = ticket.resolver.user_email; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell8)
+    
+//                 let cell9 = document.createElement("td"); //create a header element (DOM manipulation);
+//                 cell9.innerHTML = ticket.reimb_status_fk.reimb_status; //populating the h3 with the name of the Pokemon
+//                 row.appendChild(cell9);
+
+//             document.getElementById("displayEmployeeTickets").appendChild(row);
+//             } 
+//         }   
+//     }
+// } 

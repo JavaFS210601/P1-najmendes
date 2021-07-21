@@ -94,3 +94,5 @@
 2021-07-21 14:14:50 INFO  ManagerLoginController:165 - Ticket resolved successfully
 2021-07-21 14:15:14 INFO  ManagerLoginController:92 - Manager request to view tickets
 2021-07-21 14:16:36 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:29:29 WARN  MasterServlet:43 - Attempt to log in as employee
+2021-07-21 14:29:40 WARN  EmployeeLoginController:77 - Invalid credentials entered for employee login
