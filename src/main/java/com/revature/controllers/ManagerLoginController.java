@@ -14,7 +14,7 @@ import org.apache.logging.log4j.Logger;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.models.LoginDTO;
 import com.revature.models.Reimbursement;
-import com.revature.services.EmployeeLoginService;
+import com.revature.models.User;
 import com.revature.services.ManagerLoginService;
 
 public class ManagerLoginController {
@@ -58,7 +58,7 @@ public class ManagerLoginController {
 					
 					response.setStatus(200); //successfully retrieved manager
 					response.getWriter().print("Hello, " + loginDTO.username + " is logged in!" );
-					log.info("Successful manager login");
+					log.info(loginDTO.username + " :Successful manager login");
 					
 				} else {
 					
@@ -79,10 +79,6 @@ public class ManagerLoginController {
 	}
 
 	
-
-	
-	
-	
 	
 	public void viewAllTickets(HttpServletResponse response) throws IOException {
 		
@@ -99,10 +95,77 @@ public class ManagerLoginController {
 				
 	
 	
+	public void viewResolvingTicket(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		//this process below is to get our JSON string
+		BufferedReader bufferedReader = request.getReader();
+		
+		StringBuilder stringBuilder = new StringBuilder();
+		
+		String line = bufferedReader.readLine();
+		
+			while (line != null) {
+				
+				stringBuilder.append(line);
+				line = bufferedReader.readLine();
+			}//while
+		
+		String postBody = new String(stringBuilder);
+		
+		//we created a LoginDTO object using the JSON turned Java 
+		Reimbursement userInput = objectMapper.readValue(postBody, Reimbursement.class);
+		
+
+		Reimbursement ticket2bResolved = managerLoginService.viewResolvingTicket(userInput.getReimb_id());
+		
+		String json = objectMapper.writeValueAsString(ticket2bResolved);
+		
+		response.getWriter().print(json);
+
+		response.setStatus(200);
+		log.info("Employee request to view tickets");
+	
+}//view tickets method	
+	
+	
+	
+	
 	
 	
 	//manager resolveTicket() ...add log.warn("Ticket information has been updated");
 	
+	public void resolveTicket(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		if (request.getMethod().equals("POST")) { //post MUST BE CAPITAL!!! ("POST") not ("Post")
+			
+			//this process below is to get our JSON string
+			BufferedReader bufferedReader = request.getReader();
+			
+			StringBuilder stringBuilder = new StringBuilder();
+			
+			String line = bufferedReader.readLine();
+			
+				while (line != null) {
+					
+					stringBuilder.append(line);
+					line = bufferedReader.readLine();
+				}//while
+			
+			String postBody = new String(stringBuilder);
+			
+			//we created a LoginDTO using the JSON turned Java "read this JSON(body) into this object (lDTO) and model it after this class (LoginDTO)
+			Reimbursement resolvePendingTicket = objectMapper.readValue(postBody, Reimbursement.class);
+			
+					
+			managerLoginService.resolveTicket(resolvePendingTicket);
+
+						
+				response.setStatus(200); //successfully retrieved manager
+				response.getWriter().print("Ticket resolved");
+				log.info("Ticket resolved successfully");
+											
+		}
+	}
 	
-	
+
 }//class

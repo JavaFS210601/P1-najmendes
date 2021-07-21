@@ -2,6 +2,10 @@ package com.revature.utils;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 /*
@@ -18,6 +22,11 @@ public class HibernateUtil {
 	//Only one session in this application - a singleton!
 	private static SessionFactory sessionFactory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 	
+	
+	
+	//trying to get this merge() down
+	private static StandardServiceRegistry registry;
+	 
 	
 	//Sessions manage our actual connection to the database
 	//Gets us a Session object using the SessionFactory interface
@@ -36,6 +45,42 @@ public class HibernateUtil {
 		session.close();
 		session = null;
 	}//methods that closes the Session object "session"(and sets it to null) to prevent any memory leaks
+	
+	
+	
+	
+	
+	
+	
+	
+	public static SessionFactory getSessionFactory() {
+        if (sessionFactory == null) {
+            try {
+                // Create registry
+                registry = new StandardServiceRegistryBuilder().configure().build();
+
+                // Create MetadataSources
+                MetadataSources sources = new MetadataSources(registry);
+
+                // Create Metadata
+                Metadata metadata = sources.getMetadataBuilder().build();
+
+                // Create SessionFactory
+                sessionFactory = metadata.getSessionFactoryBuilder().build();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                if (registry != null) {
+                    StandardServiceRegistryBuilder.destroy(registry);
+                }
+            }
+        }
+        return sessionFactory;
+    }
+	
+	
+	
+	
 	
 	
 }//class

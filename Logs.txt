@@ -15,3 +15,82 @@
 2021-07-20 23:32:13 WARN  ManagerLoginController:73 - Invalid credentials entered for manager login
 2021-07-20 23:32:23 WARN  MasterServlet:60 - Attempt to log in as manager
 2021-07-20 23:32:23 INFO  ManagerLoginController:61 - Successful manager login
+2021-07-21 09:46:37 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 09:50:10 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 09:51:28 INFO  ManagerLoginController:132 - Ticket resolved successfully
+2021-07-21 10:00:14 INFO  ManagerLoginController:132 - Ticket resolved successfully
+2021-07-21 10:22:28 INFO  ManagerDao:72 - pending ticket retrieved from database
+2021-07-21 10:22:28 INFO  ManagerLoginController:138 - Ticket resolved successfully
+2021-07-21 10:23:39 INFO  ManagerDao:72 - pending ticket retrieved from database
+2021-07-21 10:23:39 INFO  ManagerLoginController:138 - Ticket resolved successfully
+2021-07-21 10:23:56 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 10:27:46 INFO  ManagerDao:72 - pending ticket retrieved from database
+2021-07-21 10:27:46 INFO  ManagerLoginController:138 - Ticket resolved successfully
+2021-07-21 10:38:54 WARN  ManagerLoginController:150 - Could not resolve ticket
+2021-07-21 10:40:38 WARN  ManagerLoginController:150 - Could not resolve ticket
+2021-07-21 10:42:33 WARN  ManagerLoginController:150 - Could not resolve ticket
+2021-07-21 10:58:50 WARN  ManagerLoginController:150 - Could not resolve ticket
+2021-07-21 11:14:05 INFO  ManagerDao:74 - pending ticket retrieved from database
+2021-07-21 11:14:05 INFO  ManagerLoginController:138 - Ticket resolved successfully
+2021-07-21 11:14:33 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 11:16:42 INFO  ManagerDao:74 - pending ticket retrieved from database
+2021-07-21 11:16:42 INFO  ManagerLoginController:138 - Ticket resolved successfully
+2021-07-21 11:22:43 INFO  ManagerLoginController:138 - Ticket resolved successfully
+2021-07-21 11:28:25 INFO  ManagerLoginController:129 - Ticket resolved successfully
+2021-07-21 11:31:36 INFO  ManagerLoginController:129 - Ticket resolved successfully
+2021-07-21 11:32:28 INFO  ManagerLoginController:129 - Ticket resolved successfully
+2021-07-21 11:36:41 INFO  ManagerLoginController:129 - Ticket resolved successfully
+2021-07-21 11:38:11 INFO  ManagerLoginController:129 - Ticket resolved successfully
+2021-07-21 11:57:18 INFO  ManagerLoginController:91 - Manager request to view tickets
+2021-07-21 12:09:38 INFO  ManagerLoginController:129 - Ticket resolved successfully
+2021-07-21 12:12:13 INFO  ManagerLoginController:91 - Manager request to view tickets
+2021-07-21 12:13:03 INFO  ManagerLoginController:91 - Manager request to view tickets
+2021-07-21 12:13:29 INFO  ManagerLoginController:129 - Ticket resolved successfully
+2021-07-21 12:14:21 INFO  ManagerLoginController:91 - Manager request to view tickets
+2021-07-21 12:24:06 INFO  ManagerLoginController:129 - Ticket resolved successfully
+2021-07-21 12:24:22 INFO  ManagerLoginController:91 - Manager request to view tickets
+2021-07-21 12:26:50 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-21 12:26:51 INFO  ManagerLoginController:60 - six :Successful manager login
+2021-07-21 12:35:22 INFO  ManagerLoginController:91 - Manager request to view tickets
+2021-07-21 12:35:34 INFO  ManagerLoginController:91 - Manager request to view tickets
+2021-07-21 12:35:53 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 12:38:00 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 12:44:35 INFO  ManagerLoginController:91 - Manager request to view tickets
+2021-07-21 12:46:11 INFO  ManagerLoginController:91 - Manager request to view tickets
+2021-07-21 12:46:13 INFO  ManagerLoginController:91 - Manager request to view tickets
+2021-07-21 12:47:17 INFO  ManagerLoginController:91 - Manager request to view tickets
+2021-07-21 12:55:22 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 12:55:28 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-21 12:58:47 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 13:01:12 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 13:07:00 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 13:07:07 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 13:08:02 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 13:08:11 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 13:08:49 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 13:09:01 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 13:09:07 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 13:09:56 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 13:14:32 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 13:14:45 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 13:24:07 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 13:28:28 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 13:57:53 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:03:26 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:05:01 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:06:35 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:07:05 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:07:41 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:08:32 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:09:35 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:12:23 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:12:25 INFO  ManagerLoginController:165 - Ticket resolved successfully
+2021-07-21 14:12:39 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:12:50 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:13:47 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:13:59 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:14:15 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:14:48 INFO  ManagerLoginController:126 - Employee request to view tickets
+2021-07-21 14:14:50 INFO  ManagerLoginController:165 - Ticket resolved successfully
+2021-07-21 14:15:14 INFO  ManagerLoginController:92 - Manager request to view tickets
+2021-07-21 14:16:36 INFO  ManagerLoginController:92 - Manager request to view tickets

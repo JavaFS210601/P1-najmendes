@@ -5,6 +5,7 @@ import java.util.List;
 import com.revature.daos.ManagerDao;
 import com.revature.models.LoginDTO;
 import com.revature.models.Reimbursement;
+import com.revature.models.User;
 
 public class ManagerLoginService {
 
@@ -23,6 +24,21 @@ public class ManagerLoginService {
 		return managerDao.selectAllReimbursements();	
 	}
 	
+	
+	
+	public Reimbursement viewResolvingTicket(int id) {
+		return managerDao.retrieveResolvingTicket(id);
+	}
+	
+	
+
+	
+	
+	
+	public void resolveTicket(Reimbursement reimbursement) {
+		managerDao.updateTicket(reimbursement);
+
+	}
 	
 	
 }//class

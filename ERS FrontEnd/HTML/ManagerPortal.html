@@ -11,6 +11,7 @@
     <!-- boostrap styles for buttons here: https://bootstrapbay.com/blog/day-6-bootstrap-4-buttons-tutorial-and-examples/ -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">  <!-- has the eye/edit/delete icons added to buttons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.2/css/bootstrap.min.css">  
     <link rel = "stylesheet" href = "./../BasePage.css">
 </head>
 <body>
@@ -97,7 +98,7 @@
         <br>
         <br>
 
-        <button id = "viewUnresolved" type="button" class="btn btn-outline-danger"><i class="far fa-eye"> Pending Tickets</i></button>
+        <button id = "viewPending" type="button" class="btn btn-outline-danger"><i class="far fa-eye"> Pending Tickets</i></button>
 
         <br>
         <br>
@@ -105,7 +106,7 @@
         <table class="table table-bordered">
             <thead>
               <tr>
-                <th >Reimbursement Id</th>
+                <th >Ticket Id</th>
                 <th >Type</th>
                 <th >Amount</th>
                 <th >Date Submitted</th>
@@ -115,7 +116,7 @@
                 <th >Status</th>
               </tr>
             </thead>
-            <tbody id="displayUnresolvedTickets">
+            <tbody id="displayPendingTickets">
 
 
                 <!-- FIGURE OUT HOW TO GET FUNCTIONAL BUTTON IN THE LAST COLUMN OF EACH ROW <td id = cell9></td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>Resolve</button></td> -->
@@ -136,25 +137,26 @@
           <br>
           <!-- Table of Unresolved/Pending Tickets-->
           <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th >Reimbursement Id</th>
-                  <th >Type</th>
-                  <th >Amount</th>
-                  <th >Date Submitted</th>
-                  <th >Date Resolved</th>
-                  <th >Description</th>
-                  <th >Employee Contact</th>
-                  <th >Status</th>
-                </tr>
-              </thead>
-              <tbody id="displayUnresolvedTickets">
+              <thead id = "specificTicket">
+
+              <tbody id="displaySpecificTicket">
       
       
                   <!-- FIGURE OUT HOW TO GET FUNCTIONAL BUTTON IN THE LAST COLUMN OF EACH ROW <td id = cell9></td><button type="button" class="btn btn-success"><i class="fas fa-edit"></i>Resolve</button></td> -->
               </tbody>
             </table>
 
+
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" checked>
+              <label class="custom-control-label" for="customRadio1">Approve Ticket</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+              <label class="custom-control-label" for="customRadio2">Deny Ticket</label>
+            </div>
+            <br>
+            <button id = "submitResolve" type="button" class="btn btn-outline-warning"hidden><i class="far fa-edit" > Submit</i></button>
     </div>
 
 

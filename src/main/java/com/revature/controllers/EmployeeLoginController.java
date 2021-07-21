@@ -62,7 +62,7 @@ public class EmployeeLoginController {
 					
 					response.setStatus(200); //successfully retrieved manager
 					response.getWriter().print("Hello, " + loginDTO.username + " is logged in!" );
-					log.info("Successful employee login");
+					log.info(loginDTO.username + ": Successful employee login");
 					
 				} else {
 					
@@ -147,7 +147,7 @@ public class EmployeeLoginController {
 					employeeService.submitNewTicket(newReimb);
 					
 					response.setStatus(200);
-					response.getWriter().print("New Ticket Added" );
+					response.getWriter().print("New Ticket Added");
 					log.info("Employee successfully submitted a new ticket");	
 				}	
 				

@@ -65,10 +65,14 @@ public class MasterServlet extends HttpServlet {
 			case "managerviewalltickets":
 				managerLoginController.viewAllTickets(response);			
 				break;
-//							
-//			case "managerresolveticket":
-//				employeeLoginController.viewAllTickets(request, response);			
-//				break;
+				
+			case "managerviewresolvingticket":
+				managerLoginController.viewResolvingTicket(request, response);			
+				break;
+							
+			case "managerresolveticket":
+				managerLoginController.resolveTicket(request, response);			
+				break;
 
 						
 		}//switch	

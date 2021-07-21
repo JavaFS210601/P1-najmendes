@@ -2,3 +2,9 @@
 //when you run as server & get your 404 page eventually we'll use this base url and make calls 
 //to the server by adding endpoints to it
 const url = 'http://localhost:8080/P1-najmendes/'
+
+
+document.getElementById("lodging").addEventListener("mouseover", displayTicketInfo);
+function displayTicketInfo(){
+    document.getElementById("lodging").innerHTML("LOGDING");
+}
