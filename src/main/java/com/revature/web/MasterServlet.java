@@ -7,8 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.revature.controllers.EmployeeLoginController;
 import com.revature.controllers.ManagerLoginController;
+import com.revature.daos.EmployeeDao;
 
 
 
@@ -16,6 +20,7 @@ public class MasterServlet extends HttpServlet {
 	
 	private EmployeeLoginController employeeLoginController = new EmployeeLoginController();
 	private ManagerLoginController managerLoginController = new ManagerLoginController();
+	final Logger log = LogManager.getLogger(MasterServlet.class);
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
@@ -35,6 +40,7 @@ public class MasterServlet extends HttpServlet {
 		
 		//employee requests
 			case "employeelogin":
+				log.warn("Attempt to log in as employee");
 				employeeLoginController.loginEmployee(request, response);				
 				break;
 				
@@ -43,13 +49,15 @@ public class MasterServlet extends HttpServlet {
 				break;
 										
 			case "employeesubmitticket":
+				log.warn("Employee attempt to submit new ticket");
 				employeeLoginController.submitNewTicket(request, response);			
 				break;
 				
 				
 				
 		//finance manager requests		
-			case "managerlogin":{			
+			case "managerlogin":{	
+				log.warn("Attempt to log in as manager");
 				managerLoginController.loginManager(request, response);	
 				break;
 			}

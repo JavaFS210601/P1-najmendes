@@ -8,15 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.models.LoginDTO;
 import com.revature.models.Reimbursement;
+import com.revature.services.EmployeeLoginService;
 import com.revature.services.ManagerLoginService;
 
 public class ManagerLoginController {
 		
 	private ManagerLoginService managerLoginService = new ManagerLoginService();
 	private ObjectMapper objectMapper = new ObjectMapper();
+	final Logger log = LogManager.getLogger(ManagerLoginController.class);
 
 	public void loginManager(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
@@ -53,6 +58,7 @@ public class ManagerLoginController {
 					
 					response.setStatus(200); //successfully retrieved manager
 					response.getWriter().print("Hello, " + loginDTO.username + " is logged in!" );
+					log.info("Successful manager login");
 					
 				} else {
 					
@@ -64,6 +70,7 @@ public class ManagerLoginController {
 					
 					response.setStatus(401);
 					response.getWriter().print("Login Invalid");
+					log.warn("Invalid credentials entered for manager login");
 					
 				}	
 		
@@ -86,50 +93,15 @@ public class ManagerLoginController {
 		response.getWriter().print(json);
 		
 		response.setStatus(200);
+		log.info("Manager request to view tickets");
 	}	
-//		if (request.getMethod().equals("GET")) {
-//					
-//					//this process below is to get our JSON string
-//					BufferedReader bufferedReader = request.getReader();
-//					
-//					StringBuilder stringBuilder = new StringBuilder();
-//					
-//					String line = bufferedReader.readLine();
-//					
-//						while (line != null) {
-//							
-//							stringBuilder.append(line);
-//							line = bufferedReader.readLine();
-//						}//while
-//					
-//					String postBody = new String(stringBuilder);
-//					int employeeId = Integer.parseInt(postBody);
-//							
-//							User employee = employeeService.viewAllTickets(employeeId);
-//								
-//							String json = objectMapper.writeValueAsString(employee);
-//								
-//							response.getWriter().print(json);	
-//								
-//							response.setStatus(200);
-//							
-//							
-//						} else {
-//							
-//							HttpSession session = request.getSession(false);
-//							
-//								if (session != null) {
-//									session.invalidate();
-//								}
-//							
-//							response.setStatus(401);
-//							response.getWriter().print("Login Invalid");
-//							
-//						}	
+
 				
 	
 	
 	
+	
+	//manager resolveTicket() ...add log.warn("Ticket information has been updated");
 	
 	
 	

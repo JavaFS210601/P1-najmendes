@@ -1,0 +1,17 @@
+2021-07-20 23:10:06 WARN  EmployeeLoginController:77 - Invalid credentials entered for employee login
+2021-07-20 23:10:22 WARN  EmployeeLoginController:77 - Invalid credentials entered for employee login
+2021-07-20 23:11:04 WARN  ManagerLoginController:72 - Invalid credentials entered for manager login
+2021-07-20 23:13:13 WARN  ManagerLoginController:72 - Invalid credentials entered for manager login
+2021-07-20 23:15:50 WARN  ManagerLoginController:61 - Successful employee login
+2021-07-20 23:16:31 WARN  EmployeeLoginController:77 - Invalid credentials entered for employee login
+2021-07-20 23:17:02 WARN  EmployeeLoginController:65 - Successful employee login
+2021-07-20 23:18:31 WARN  EmployeeLoginController:150 - Employee successfully submitted a new ticket
+2021-07-20 23:25:32 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-20 23:30:33 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-20 23:31:38 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-20 23:31:45 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-20 23:31:53 INFO  EmployeeLoginController:115 - Employee request to view tickets
+2021-07-20 23:32:12 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-20 23:32:13 WARN  ManagerLoginController:73 - Invalid credentials entered for manager login
+2021-07-20 23:32:23 WARN  MasterServlet:60 - Attempt to log in as manager
+2021-07-20 23:32:23 INFO  ManagerLoginController:61 - Successful manager login

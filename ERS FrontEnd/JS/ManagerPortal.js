@@ -124,10 +124,6 @@ async function populateAllEmplyeeTickets(){
             let cell9 = document.createElement("td"); //create a header element (DOM manipulation);
             cell9.innerHTML = ticket.reimb_status_fk.reimb_status; //populating the h3 with the name of the Pokemon
             row.appendChild(cell9);
-
-            let cell10 = document.createElement("button"); //create a header element (DOM manipulation);
-            cell10.innerHTML = document.createElement("button"); //populating the h3 with the name of the Pokemon
-            row.appendChild(cell10);
             
             document.getElementById("displayEmployeeTickets").appendChild(row);
         } 
@@ -321,3 +317,7 @@ async function viewUnresolvedTickets(){
 
 
 //resolve ticket!!!
+
+// let cell10 = document.createElement("button"); //create a header element (DOM manipulation);
+// cell10.innerHTML = document.createElement("button"); //populating the h3 with the name of the Pokemon
+// row.appendChild(cell10);

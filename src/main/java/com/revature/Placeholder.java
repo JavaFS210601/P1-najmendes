@@ -126,19 +126,15 @@ public class Placeholder {
 	
 	
 	
-	
-	
-	
-	
 	//LAST METHOD TO COMPLETE!!!!!
 	
-	public static void reolveTicket(Reimbursement reimbursement) { //must be put in Reim_Status DAO
+	public static void resolveTicket(Reimbursement reimbursement) { //must be put in Reim_Status DAO
 		
 		//Open a session object so that we can connect to the db 
 		
 		Session session = HibernateUtil.getSession(); //Note the parallels btw ConnectionUtil.getConnection() in JDBC!
 		
-		session.save(reimbursement); //Refer to notes if you don't recognize this method - it's a method for insert functionality
+		session.merge(reimbursement); //Refer to notes if you don't recognize this method - it's a method for insert functionality
 		
 		HibernateUtil.closeSession(); //Close our session (not super necessary here, but good practice)
 		
@@ -147,17 +143,6 @@ public class Placeholder {
 	}
 	
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
@@ -249,6 +234,8 @@ public class Placeholder {
 		insertReimbursement(reimb9);
 		insertReimbursement(reimb10);
 		
+		Reimbursement resolve9 = new Reimbursement(9, 30,"02/14/2021","07/20/2021","never got a reimbursement before...",five,seven, denied, other);
+		resolveTicket(resolve9);
 	
 		List<User> users = selectAllUsers();
 		
@@ -263,5 +250,9 @@ public class Placeholder {
 				System.out.println(r);
 			}
 		
+
+			
+			
+			
 	}
 }

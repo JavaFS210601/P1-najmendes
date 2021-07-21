@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hibernate.Session;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,12 +18,14 @@ import com.revature.models.Reimbursement;
 import com.revature.models.User;
 import com.revature.services.EmployeeLoginService;
 import com.revature.utils.HibernateUtil;
+import com.revature.web.MasterServlet;
 
 
 public class EmployeeLoginController {
 	
 	private EmployeeLoginService employeeService = new EmployeeLoginService();
 	private ObjectMapper objectMapper = new ObjectMapper();
+	final Logger log = LogManager.getLogger(EmployeeLoginController.class);
 	
 	public void loginEmployee(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
@@ -58,6 +62,7 @@ public class EmployeeLoginController {
 					
 					response.setStatus(200); //successfully retrieved manager
 					response.getWriter().print("Hello, " + loginDTO.username + " is logged in!" );
+					log.info("Successful employee login");
 					
 				} else {
 					
@@ -69,6 +74,7 @@ public class EmployeeLoginController {
 					
 					response.setStatus(401);
 					response.getWriter().print("Login Invalid");
+					log.warn("Invalid credentials entered for employee login");
 					
 				}			
 		}	
@@ -106,6 +112,7 @@ public class EmployeeLoginController {
 			response.getWriter().print(json);
 
 			response.setStatus(200);
+			log.info("Employee request to view tickets");
 		
 	}//view tickets method	
 		
@@ -141,7 +148,7 @@ public class EmployeeLoginController {
 					
 					response.setStatus(200);
 					response.getWriter().print("New Ticket Added" );
-						
+					log.info("Employee successfully submitted a new ticket");	
 				}	
 				
 	}

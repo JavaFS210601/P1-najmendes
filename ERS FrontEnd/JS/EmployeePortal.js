@@ -105,7 +105,7 @@ async function populateReimbursements(){
         let headrow = document.createElement("tr"); 
 
         let head1 = document.createElement("th"); //create a header element (DOM manipulation);
-        head1.innerHTML = "Reimbursement Id"; //populating the h3 with the name of the Pokemon
+        head1.innerHTML = "Ticket Id"; //populating the h3 with the name of the Pokemon
         headrow.appendChild(head1);
 
         let head2 = document.createElement("th"); //create a header element (DOM manipulation);
